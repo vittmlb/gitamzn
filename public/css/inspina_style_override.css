@@ -1,0 +1,185 @@
+/**
+Meu CSS com alterações que façam um "override" ao css inspinia.
+**/
+
+.vertical-align {
+    display: flex;
+    flex-direction: row;
+}
+
+.vertical-align > [class^="col-"],
+.vertical-align > [class*=" col-"] {
+    display: flex;
+    align-items: center;     /* Align the flex-items vertically */
+}
+
+.produto-display-list ul {
+    padding-left: 0;
+}
+
+.produto-display-list img {
+    align-items: flex-start;
+    margin-top: 10px;
+    width: 70px;
+    height: 70px;
+    margin-right: 15px;
+}
+
+.produto-display-list li {
+    height: 100px;
+    /*background-color: lightgray;*/
+    list-style-type: none;
+    border-bottom: 1px solid lightgray;
+    padding: 5px;
+}
+
+.produto-display-list-title {
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #d9d9df;
+}
+.produto-display-list-title a {
+    text-decoration: none;
+    color: dimgray;
+}
+.produto-display-list-title a:link, a:visited, a:active, a:hover {
+    color: dimgray;
+}
+
+/* MODAL PRODUTOS */
+.produto-list-ml-status {
+    margin-top: 30px;
+    margin-left: 5px;
+}
+.produto-list-ml-people,
+.produto-list-ml-action {
+    margin-top: 20px;
+    position: relative;
+    right: 0;
+}
+.produto-list-ml-action a {
+    margin-left: 5px;
+}
+.produto-list-ml-completion {
+    margin-top: 20px;
+}
+dd.produto-list-ml-people {
+    text-align: left;
+    margin-top: 5px;
+}
+.produto-list-ml-people img {
+    width: 45px;
+    height: 45px;
+}
+.produto-list-ml-title {
+    margin-top: 14px;
+}
+.produto-list-ml-title a {
+    font-size: 14px;
+    color: #676a6c;
+    font-weight: 600;
+}
+.produto-list-ml-list table tr td {
+    border-top: none;
+    border-bottom: 1px solid #e7eaec;
+    padding: 15px 20px;
+    vertical-align: middle;
+}
+.produto-list-ml-manager .tag-list li a {
+    font-size: 10px;
+    background-color: white;
+    padding: 5px 12px;
+    color: inherit;
+    border-radius: 2px;
+    border: 1px solid #e7eaec;
+    margin-right: 5px;
+    margin-top: 5px;
+    display: block;
+}
+.produto-list-ml-files li a {
+    font-size: 11px;
+    color: #676a6c;
+    margin-left: 10px;
+    line-height: 22px;
+}
+
+.produto-list-ml-list tr {
+    transform-origin: center top;
+    transition: transform .4s;
+}
+.produto-list-ml-list tr:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+}
+
+.div-margin-bottom {
+    margin-bottom: 30px;
+}
+
+slick {
+    width: 80%;
+    margin: auto;
+}
+
+.toolbar-input-button {
+    margin-bottom: 12px;
+}
+
+@media screen and (max-width: 1142px) {
+    .produto-list-ml-title {
+        padding-left: 35px;
+    }
+    #btn-update-all {
+        width: 100%;
+    }
+    #btn-dropdown-ordenar {
+        width: 12%;
+    }
+    #btn-ordenar {
+        width: 88%;
+    }
+    #span-btn-ordenar {
+        margin-left: 80px;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .produto-list-ml-title a {
+        font-size: .85em;
+    }
+    slick {
+        width: 100%;
+    }
+    .slick-div {
+        margin-bottom: 15px;
+    }
+    #sales-current-year {
+        text-align: right;
+    }
+    #sales-current-year-table td:nth-child(even) {
+        text-align: right;
+    }
+    .produto-display-list-title h1 {
+        font-size: 2em;
+    }
+    .produto-list-ml-title {
+        margin-top: 8px;
+    }
+    .produto-list-ml-title small:last-child {
+        display: block;
+        margin-top: 1px;
+    }
+    #btn-update-all {
+        width: 100%;
+    }
+    #btn-dropdown-ordenar {
+        width: 12%;
+    }
+    #btn-ordenar {
+        width: 88%;
+    }
+    #span-btn-ordenar {
+        margin-left: 80px;
+    }
+}
+

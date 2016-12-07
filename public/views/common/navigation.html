@@ -1,0 +1,55 @@
+<nav class="navbar-default navbar-static-side" role="navigation">
+    <div class="sidebar-collapse">
+        <ul side-navigation class="nav metismenu" id="side-menu">
+            <li class="nav-header">
+
+                <div class="dropdown profile-element" dropdown>
+                    <img alt="image" class="img-circle" src="img/profile_small.jpg"/>
+                    <a class="dropdown-toggle" dropdown-toggle href>
+                            <span class="clear">
+                                <span class="block m-t-xs">
+                                    <strong class="font-bold">David Williams</strong>
+                             </span>
+                                <span class="text-muted text-xs block">Art Director <b class="caret"></b></span>
+                            </span>
+                    </a>
+                    <ul class="dropdown-menu animated fadeInRight m-t-xs">
+                        <li><a ui-sref="profile">Profile</a></li>
+                        <li><a ui-sref="contacts">Contacts</a></li>
+                        <li><a ui-sref="inbox">Mailbox</a></li>
+                        <li class="divider"></li>
+                        <li><a href="../login.html">Logout</a></li>
+                    </ul>
+                </div>
+                <div class="logo-element">
+                    IN+
+                </div>
+            </li>
+            <li ng-class="{active: $state.includes('ml')}">
+                <a href=""><i class="fa fa-archive"></i> <span class="nav-label">Produtos</span> <span class="fa arrow"></span></a>
+                <ul class="nav nav-second-level collapse" ng-class="{in: $state.includes('ml')}">
+                    <li ui-sref-active="active"><a ui-sref="produto_list">Listar Produtos</a></li>
+                    <li ui-sref-active="active"><a ui-sref="produto_create">Criar Produto</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href=""><i class="fa fa-money"></i> <span class="nav-label">Despesas</span> <span class="fa arrow"></span></a>
+                <ul class="nav nav-second-level collapse">
+                    <li ui-sref-active="active"><a ui-sref="despesas_list">Listar Despesas</a></li>
+                    <li ui-sref-active="active"><a ui-sref="despesas_create">Criar Despesas</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href=""><i class="fa fa-money"></i> <span class="nav-label">NCMs</span> <span class="fa arrow"></span></a>
+                <ul class="nav nav-second-level collapse">
+                    <li ui-sref-active="active"><a ui-sref="ncm_list">Listar NCMs</a></li>
+                    <li ui-sref-active="active"><a ui-sref="ncm_create">Criar NCMs</a></li>
+                </ul>
+            </li>
+            <li>
+                <a ui-sref="estudos_main"><i class="fa fa-pie-chart"></i> <span class="nav-label">Estudos</span></a>
+            </li>
+        </ul>
+
+    </div>
+</nav>

@@ -1,0 +1,14 @@
+<section data-ng-controller="VendedoresController">
+    <h1>Novo Vendedor</h1>
+    <form data-ng-submit="create()" novalidate>
+        <div class="container">
+            <label for="vendedorId">Id:</label>
+            <div class="form-group">
+                <input type="text" id="vendedorId" class="form-control" placeholder="Entre com a Id do Vendedor" data-ng-model="vendedorId" required>
+            </div>
+            <div class="container">
+                <input type="submit" class="btn btn-info pull-right" value="Cadastrar">
+            </div>
+        </div>
+    </form>
+</section>

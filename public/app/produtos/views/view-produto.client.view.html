@@ -1,0 +1,254 @@
+<div class="wrapper wrapper-content animated fadeIn" ng-controller="ListProdutosController as chart" data-ng-init="findOne()">
+    <div class="p-w-md m-t-sm">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="produto-display-list-title">
+                    <a href="{{ produto.DetailPageURL }}"><h1>{{ produto.ItemAttributes.Title}}</h1></a>
+                </div>
+                <button class="btn btn-default" ng-click="update()">Update</button>
+            </div>
+            <div class="col-sm-6 col-lg-5">
+                <div class="row">
+                    <div class="col-xs-12 col-sm-6 div-margin-bottom" style="margin-top: 10px;">
+                        <slick dots="true" ng-if="produto.ImageSets.ImageSet.length > 0">
+                            <div data-ng-repeat="img in produto.ImageSets.ImageSet | limitTo: 5">
+                                <div style="width: 160px; height: 160px; margin: auto;" class="image-imitation">
+                                    <img style="width: 160px; height: 160px;" ng-src="{{ img.LargeImage.URL }}" alt="">
+                                </div> <!-- Img -->
+                            </div>
+                        </slick>
+                    </div> <!-- Img -->
+                    <div class="col-sm-6 div-margin-bottom"> <!-- Preço de Venda -->
+                        <div class="row m-t-xs">
+                            <div class="col-xs-12" style="margin: auto;">
+                                <h5 style="margin-top: 16px;" class="m-b-xs">Preço de Venda</h5>
+                                <h1 class="no-margins">{{ produto.virtual.price | currency: 'U$ ' }}</h1>
+                                <div class="font-bold text-navy">98% <i class="fa fa-bolt"></i></div>
+                                <div class="row" style="margin-top: 8px;">
+                                    <div class="col-xs-6">
+                                        <small class="stats-label">Acompanhamento</small>
+                                        <h4>{{ produto.created | date: 'dd/MM/yyyy' }}</h4>
+                                    </div>
+
+                                    <div class="col-xs-6">
+                                        <small class="stats-label">Categoria</small>
+                                        <h4>{{ produto.virtual.categoria }}</h4>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div> <!-- Coluna 1 - Img e dados -->
+            <div class="visible-lg col-lg-3 div-margin-bottom">
+                <h1 class="m-b-xs">
+                    Reviews: {{ produto.virtual.num_reviews }}
+                </h1>
+                <small>
+                    {{ produto.virtual.num_stars }} out of 5 stars<br/>
+                </small>
+                <div class="m-b-sm">
+                    <div sparkline spark-data="chart.sparkline1" spark-options="chart.sparkline1Options"></div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-4">
+                        <small class="stats-label">Pages / Visit</small>
+                        <h4>236 321.80</h4>
+                    </div>
+
+                    <div class="col-xs-4">
+                        <small class="stats-label">% New Visits</small>
+                        <h4>46.11%</h4>
+                    </div>
+                    <div class="col-xs-4">
+                        <small class="stats-label">Last week</small>
+                        <h4>432.021</h4>
+                    </div>
+                </div>
+
+            </div> <!-- Coluna 2 - Dados -->
+            <div class="col-sm-6 col-lg-4 div-margin-bottom">
+
+                <div class="row m-t-xs">
+                    <div class="col-xs-6">
+                        <h5 class="m-b-xs">Income last month</h5>
+                        <h1 class="no-margins">160,000</h1>
+                        <div class="font-bold text-navy">98% <i class="fa fa-bolt"></i></div>
+                    </div>
+                    <div class="col-xs-6" id="sales-current-year">
+                        <h5 class="m-b-xs">Sales current year</h5>
+                        <h1 class="no-margins">42,120</h1>
+                        <div class="font-bold text-navy">98% <i class="fa fa-bolt"></i></div>
+                    </div>
+                </div>
+
+
+                <table class="table small m-t-sm" id="sales-current-year-table">
+                    <tbody>
+                    <tr>
+                        <td>
+                            <strong>142</strong> Projects
+
+                        </td>
+                        <td>
+                            <strong>22</strong> Messages
+                        </td>
+
+                    </tr>
+                    <tr>
+                        <td>
+                            <strong>61</strong> Comments
+                        </td>
+                        <td>
+                            <strong>54</strong> Articles
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <strong>154</strong> Companies
+                        </td>
+                        <td>
+                            <strong>32</strong> Clients
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+
+
+
+            </div> <!-- Coluna 3 - Tabela -->
+        </div>
+        <div class="row">
+            <div class="col-sm-12">
+
+                <div class="row">
+
+                    <div class="col-sm-12">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class="small pull-left col-md-3 m-l-lg m-t-md">
+                                    <strong>Gráfico de Vendas</strong> unidades vendidas x tempo.
+                                </div>
+                                <div class="small pull-right col-md-3 m-t-md text-right hidden-xs">
+                                    <strong>There are many</strong> variations of passages of Lorem Ipsum available, but the majority have suffered.
+                                </div>
+                                <div class="flot-chart m-b-xl">
+
+                                    <div class="flot-chart m-b-xl">
+                                        <div flot class="flot-chart-content" dataset="flotD" options="chart.flotO"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div class="col-lg-8">
+                <div class="ibox">
+                    <div class="ibox-content">
+
+                        <div class="row">
+                            <div class="col-sm-4">
+                                <div class="form-group">
+                                    <label class="control-label" for="product_name">Project Name</label>
+                                    <input type="text" id="product_name" name="product_name" value="" placeholder="Project Name" class="form-control">
+                                </div>
+                            </div>
+                            <div class="col-sm-2">
+                                <div class="form-group">
+                                    <label class="control-label" for="price">Name</label>
+                                    <input type="text" id="price" name="price" value="" placeholder="Name" class="form-control">
+                                </div>
+                            </div>
+                            <div class="col-sm-2">
+                                <div class="form-group">
+                                    <label class="control-label" for="quantity">Company</label>
+                                    <input type="text" id="quantity" name="quantity" value="" placeholder="Company" class="form-control">
+                                </div>
+                            </div>
+                            <div class="col-sm-4">
+                                <div class="form-group">
+                                    <label class="control-label" for="status">Status</label>
+                                    <select name="status" id="status" class="form-control">
+                                        <option value="1" selected="">Completed</option>
+                                        <option value="0">Pending</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="table-responsive">
+                            <table class="table table-striped">
+
+                                <tbody>
+                                <tr>
+                                    <td>1</td>
+                                    <td>Master project</td>
+                                    <td>Patrick Smith</td>
+                                    <td>$892,074</td>
+                                    <td>Inceptos Hymenaeos Ltd</td>
+                                    <td><strong>20%</strong></td>
+                                    <td>Jul 14, 2015</td>
+                                    <td><a href="#"><i class="fa fa-check text-navy"></i></a></td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="row">
+                    <div class="ibox collapsed">
+                        <div class="ibox-title">
+                            <h5>Histórico de Vendas</h5>
+                            <div ibox-tools></div>
+                        </div>
+                        <div class="ibox-content">
+                            <table class="table table-striped">
+                                <thead>
+                                <th>Data</th>
+                                <th class="text-center">Venda Total</th>
+                                <th class="text-center">Venda da Data</th>
+                                </thead>
+                                <tbody>
+                                <tr data-ng-repeat="item in produto.historico">
+                                    <td>{{ item.data | date: 'dd/MM/yyyy' }}</td>
+                                    <td class="text-center">{{ item.venda }}</td>
+                                    <td class="text-center">{{ item.venda_da_data }}</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="ibox collapsed">
+                        <div class="ibox-title">
+                            <h5>Características</h5>
+                            <div ibox-tools></div>
+                        </div>
+                        <div class="ibox-content">
+                            <h1 class="m-b-xs">
+                                Características
+                            </h1>
+                            <br/>
+                            <small ng-repeat="feature in produto.ItemAttributes.Feature">
+                                # {{ feature }}<br/><br/>
+                            </small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+</div>

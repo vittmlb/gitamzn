@@ -1,0 +1,134 @@
+<br/>
+<div class="row wrapper border-bottom white-bg page-heading">
+    <div class="col-sm-4">
+        <h2>Acompanhamento de Produtos</h2>
+        <ol class="breadcrumb">
+            <li>
+                <a href="#">Home</a>
+            </li>
+            <li class="active">
+                <strong>Acompanhamento de Produtos</strong>
+            </li>
+        </ol>
+    </div>
+</div>
+<section data-ng-controller="ListProdutosController" data-ng-init="find()">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="wrapper wrapper-content animated fadeInUp">
+
+                <div class="ibox">
+                    <div class="ibox-title">
+                        <h5>Lista com os produtos acompanhados</h5>
+
+                        <div class="ibox-tools">
+                            <a ui-sref="produtos_create" class="btn btn-primary btn-xs">Acompanhar Novo Produto</a>
+                        </div>
+                    </div>
+                    <div class="ibox-content">
+                        <div class="row m-b-sm m-t-sm toolbar-list-ml">
+                            <div class="col-xs-12 col-md-1 toolbar-input-button">
+                                <button type="button" ng-click="atualizarTodasVendas()" id="btn-update-all" class="btn btn-white btn-sm "><i class="fa fa-refresh"></i> Update</button>
+                            </div>
+                            <div class="col-xs-12 col-sm-3 toolbar-input-button">
+                                <!-- Single button -->
+                                <div class="btn-group pull-right" style="width: 100%;">
+                                    <button class="btn btn-white btn-sm" id="btn-dropdown-ordenar" ng-click="reverseSort()">
+                                        <i class="fa fa-refresh" aria-hidden="true"></i>
+                                    </button>
+                                    <button type="button" class="btn btn-white btn-sm dropdown-toggle" id="btn-ordenar" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        Ordenar &nbsp<i class="fa fa-sort" aria-hidden="true"></i>
+                                    </button>
+                                    <ul class="dropdown-menu">
+                                        <li><a ng-click="sort('media.venda')">Média</a></li>
+                                        <li><a ng-click="sort('historico[historico.length-1].venda')">Vendas</a></li>
+                                        <li><a ng-click="sort('price')">Preço</a></li>
+                                        <li role="separator" class="divider"></li>
+                                        <li><a href="#"></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="col-xs-12 col-sm-2 toolbar-input-button">
+                                <div class="input-group">
+                                    <span class="input-group-addon"><i class="fa fa-filter"></i></span>
+                                    <input type="text" class="input-sm form-control" data-ng-model="numItemsPerPage" placeholder="num por pag">
+                                </div>
+                            </div>
+                            <div class="col-xs-12 col-sm-3 toolbar-input-button">
+                                <div class="input-group">
+                                    <span class="input-group-addon"><i class="fa fa-search"></i></span>
+                                    <input id="busca-produtos" type="text" class="input-sm form-control" placeholder="Busca" data-ng-model="query">
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div class="produto-display-list">
+                            <ul style="list-style-type: none;">
+                                <li class="produto-display" dir-paginate="item in produtos | filter: query | orderBy: sortkey: reverse | itemsPerPage: numItemsPerPage">
+                                    <div class="row">
+                                        <div class="col-xs-2 col-sm-1">
+                                            <div class="">
+                                                <a href=""><img alt="image" ng-src="{{item.virtual.thumbnail}}"></a>
+                                            </div>
+                                        </div>
+                                        <div class="col-xs-10 col-sm-6 col-md-6 col-lg-4">
+                                            <div class="produto-list-ml-title">
+                                                <a href="#!/produtos/{{ item._id }}">{{ item.virtual.title | limitTo: 60}}</a>
+                                                <br/>
+                                                <small>Vendas: {{item.historico[item.historico.length-1].venda}}</small>&nbsp;&nbsp;
+                                                <small>Média: {{item.media.venda | number: 2}}</small>&nbsp;&nbsp;
+                                                <small>Preço: {{item.virtual.price | currency: 'U$ '}}</small>
+                                            </div>
+                                        </div>
+                                        <div class="visible-lg col-lg-1 text-right">
+                                            <div style="margin-top: 10px;">
+                                                <span>Vendas</span>
+                                                <h2 class="font-bold">{{item.historico[item.historico.length-1].venda}}</h2>
+                                            </div>
+                                        </div>
+                                        <div class="visible-lg col-lg-2 text-right">
+                                            <div style="margin-top: 10px;">
+                                                <span>Média</span>
+                                                <h2 class="font-bold">{{item.media.venda | number: 2}}</h2>
+                                            </div>
+                                        </div>
+                                        <!--<div class="visible-lg col-lg-3">-->
+                                            <!--<div class="produto-list-ml-completion">-->
+                                                <!--<small>Completion with: 48%</small>-->
+                                                <!--<div class="progress progress-mini">-->
+                                                    <!--<div style="width: 48%;" class="uib-progress-bar"></div>-->
+                                                <!--</div>-->
+                                            <!--</div>-->
+                                        <!--</div>-->
+                                        <div class="hidden-xs col-sm-5 col-md-4 col-lg-3">
+                                            <div class="produto-list-ml-action">
+                                                <a ng-click="delete(item)" class="btn btn-white btn-sm pull-right"><i class="fa fa-times"></i></a>
+                                                <a href="#!/produtos/{{ item._id }}" class="btn btn-white btn-sm pull-right"><i class="fa fa-eye"></i></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+
+                        </div>
+                        <div class="row">
+                            <div class="d-pagination">
+                                <dir-pagination-controls class="col-xs-12"
+                                                         max-size="5"
+                                                         direction-links="true"
+                                                         boundary-links="true"
+                                >
+                                </dir-pagination-controls>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<script>
+//    $('#tblListaProdutos').footable(); // todo: apagar depois de confirmar que não está sendo usado.
+//    $('#myFooTable').footable();
+</script>

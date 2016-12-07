@@ -1,0 +1,33 @@
+<div class="container panel-produto">
+    <a href="#!/produtos/{{item._id}}">
+        <div class="row">
+            <div id="panel-img" class="col-xs-4 col-sm-2">
+                <figure class="center-block">
+                    <img ng-src="{{item.thumbnail}}" class="center-block" alt="thumbnail of {{item.title}}">
+                </figure>
+            </div> <!-- panel-img IMAGEM -->
+
+            <div id="panel-descricao">
+                <div class="col-xs-8 col-sm-10 col-md-7">
+                    <div class="row">
+                        <div class="info-venda">
+                            <a href="{{item.permalink}}"><h4 data-ng-bind="item.title"></h4></a>
+                            <label id="lbl_vendas">Vendas: <span>{{item.historico[item.historico.length-1].venda}}</span></label>
+                            <label id="lbl_media">Média: {{item.media.venda | number: 2}}</label>
+                            <label id="lbl_preco">Preço: <span>{{item.price | currency: 'R$ '}}</span></label>
+                        </div>
+                    </div>
+
+                </div>
+            </div> <!-- panel-descricao - DESCRIÇÃO -->
+
+            <div id="panel-tools">
+                <div class="hidden-xs hidden-sm col-md-2">
+                    <button class="btn btn-sm btn-danger pull-right"  ng-click="remove(item)"><i class="fa fa-times" aria-hidden="true"></i></button>
+                    <button class="btn btn-sm btn-default pull-right" ng-click="atualizarVenda(item)"><i class="fa fa-refresh" aria-hidden="true"></i></button>
+                </div>
+            </div> <!-- panel-tools TOOLS -->
+
+        </div>
+    </a>
+</div>

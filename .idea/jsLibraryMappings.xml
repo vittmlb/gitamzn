@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="JavaScriptLibraryMappings">
+    <file url="file://$PROJECT_DIR$" libraries="{impAmazon/node_modules}" />
+    <file url="PROJECT" libraries="{Prototype-1.7.1, amazon-product-api-DefinitelyTyped, angular-environment-DefinitelyTyped, angular-ui-bootstrap-DefinitelyTyped, angularjs-DefinitelyTyped, bootstrap-DefinitelyTyped, bootstrap-fileinput-DefinitelyTyped, bootstrap-slider-DefinitelyTyped, chai-DefinitelyTyped, cheerio-DefinitelyTyped, compression-DefinitelyTyped, cookie-parser-DefinitelyTyped, cron-DefinitelyTyped, crypto-js-DefinitelyTyped, express-DefinitelyTyped, express-brute-DefinitelyTyped, express-brute-mongo-DefinitelyTyped, express-debug-DefinitelyTyped, express-handlebars-DefinitelyTyped, express-jwt-DefinitelyTyped, express-less-DefinitelyTyped, express-myconnection-DefinitelyTyped, express-partials-DefinitelyTyped, express-route-fs-DefinitelyTyped, express-session-DefinitelyTyped, express-unless-DefinitelyTyped, express-validator-DefinitelyTyped, flot-DefinitelyTyped, git-config-DefinitelyTyped, gruntjs-DefinitelyTyped, handlebars-DefinitelyTyped, htmlparser2-DefinitelyTyped, impAmazon/node_modules, istanbul-DefinitelyTyped, jQuery-2.0.0, mocha-DefinitelyTyped, mongodb-DefinitelyTyped, mongoose-DefinitelyTyped, mongoose-auto-increment-DefinitelyTyped, mongoose-deep-populate-DefinitelyTyped, mongoose-mock-DefinitelyTyped, mongoose-promise-DefinitelyTyped, morgan-DefinitelyTyped, multer-DefinitelyTyped, ng-file-upload-DefinitelyTyped, nock-DefinitelyTyped, node-DefinitelyTyped, node-config-manager-DefinitelyTyped, nodeunit-DefinitelyTyped, npm-DefinitelyTyped, passport-DefinitelyTyped, passport-local-DefinitelyTyped, request-DefinitelyTyped, sinon-DefinitelyTyped}" />
+    <includedPredefinedLibrary name="ECMAScript 6" />
+    <includedPredefinedLibrary name="Node.js Core" />
+    <includedPredefinedLibrary name="WebGL" />
+  </component>
+</project>

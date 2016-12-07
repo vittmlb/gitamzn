@@ -1,0 +1,184 @@
+
+<div class="row wrapper border-bottom white-bg page-heading">
+    <div class="col-sm-4">
+        <h2>Criação de Vistas</h2>
+        <ol class="breadcrumb">
+            <li>
+                <a href="#">Home</a>
+            </li>
+            <li class="active">
+                <strong>Criação de Vistas</strong>
+            </li>
+        </ol>
+    </div>
+</div>
+<section data-ng-controller="VistasController" data-ng-init="findOne()">
+    <div class="row">
+        <div class="wrapper wrapper-content animated fadeInUp">
+            <div class="col-lg-4">
+                <div class="">
+                    <div class="ibox float-e-margins">
+                        <div class="ibox-title">
+                            <h5>Cadastramento da Vista</h5>
+                            <div ibox-tools></div>
+                        </div>
+                        <div class="ibox-content">
+                            <br/><br/>
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <form data-ng-submit="update()">
+                                        <div class="form-group">
+                                            <label for="inputNomeVista">Nome da Vista</label>
+                                            <input type="text" class="form-control" id="inputNomeVista" data-ng-model="vista.nome_vista" placeholder="Nome da Vista">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="inputDescricaoVista">Descrição</label>
+                                            <textarea name="descricao_vista" id="inputDescricaoVista" data-ng-model="vista.descricao_vista" cols="30" rows="4" class="form-control"></textarea>
+                                        </div>
+                                        <div class="form-group">
+                                            <input style="margin-left: 15px;" type="submit" class="btn btn-primary pull-right" value="Update">
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                            <div class="hr-line-dashed"></div>
+                            <div class="produto-display-list">
+                                <ul style="list-style-type: none;">
+                                    <li class="produto-display" dir-paginate="item in vista.produtos_vista | filter: query | orderBy: sortkey: reverse | itemsPerPage: numItemsPerPage">
+                                        <div class="row">
+                                            <div class="col-xs-2">
+                                                <div class="">
+                                                    <a href=""><img alt="image" ng-src="{{item.thumbnail}}"></a>
+                                                </div>
+                                            </div>
+                                            <div class="col-xs-10 col-sm-6 col-md-6 col-lg-7">
+                                                <div class="produto-list-ml-title">
+                                                    <a style="font-size: 1em;" href="#!/produtos/{{ item._id }}">{{ item.title }}</a>
+                                                    <br/>
+                                                    <small>Vendas: {{item.historico[item.historico.length-1].venda}}</small>&nbsp;&nbsp;
+                                                    <small>Média: {{item.media.venda | number: 2}}</small>&nbsp;&nbsp;
+                                                    <small>Preço: {{item.price | currency: 'R$ '}}</small>
+                                                </div>
+                                            </div>
+
+                                            <div class="hidden-xs col-sm-5 col-md-4 col-lg-3">
+                                                <div class="produto-list-ml-action">
+                                                    <a ng-click="removeProdutoVistaUpdate(item)" class="btn btn-white btn-sm pull-right"><i class="fa fa-times"></i></a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+
+                            </div>
+                            <div class="row">
+                                <div class="d-pagination">
+                                    <dir-pagination-controls class="col-xs-12"
+                                                             max-size="5"
+                                                             direction-links="true"
+                                                             boundary-links="true"
+                                    >
+                                    </dir-pagination-controls>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="col-lg-8">
+                <div class="">
+
+                    <div class="ibox">
+                        <div class="ibox-title">
+                            <h5>Lista com os produtos acompanhados</h5>
+
+                            <div class="ibox-tools">
+                                <a ui-sref="produtos_create" class="btn btn-primary btn-xs">Acompanhar Novo Produto</a>
+                            </div>
+                        </div>
+                        <div class="ibox-content">
+                            <div class="row m-b-sm m-t-sm toolbar-list-ml">
+                                <div class="col-xs-12 col-md-1 toolbar-input-button">
+                                    <button type="button" ng-click="atualizarTodasVendas()" id="btn-update-all" class="btn btn-white btn-sm "><i class="fa fa-refresh"></i> Update</button>
+                                </div>
+                                <div class="col-xs-12 col-sm-3 toolbar-input-button">
+                                    <!-- Single button -->
+                                    <div class="btn-group pull-right" style="width: 100%;">
+                                        <button class="btn btn-white btn-sm" id="btn-dropdown-ordenar" ng-click="reverseSort()">
+                                            <i class="fa fa-refresh" aria-hidden="true"></i>
+                                        </button>
+                                        <button type="button" class="btn btn-white btn-sm dropdown-toggle" id="btn-ordenar" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                            Ordenar &nbsp<i class="fa fa-sort" aria-hidden="true"></i></span>
+                                        </button>
+                                        <ul class="dropdown-menu">
+                                            <li><a ng-click="sort('media.venda')">Média</a></li>
+                                            <li><a ng-click="sort('historico[historico.length-1].venda')">Vendas</a></li>
+                                            <li><a ng-click="sort('price')">Preço</a></li>
+                                            <li role="separator" class="divider"></li>
+                                            <li><a href="#"></a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="col-xs-12 col-sm-2 toolbar-input-button">
+                                    <div class="input-group">
+                                        <span class="input-group-addon"><i class="fa fa-filter"></i></span>
+                                        <input type="text" class="input-sm form-control" data-ng-model="numItemsPerPage" placeholder="num por pag">
+                                    </div>
+                                </div>
+                                <div class="col-xs-12 col-sm-3 toolbar-input-button">
+                                    <div class="input-group">
+                                        <span class="input-group-addon"><i class="fa fa-search"></i></span>
+                                        <input id="busca-produtos" type="text" class="input-sm form-control" placeholder="Busca" data-ng-model="query">
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <div class="produto-display-list">
+                                <ul style="list-style-type: none;">
+                                    <li class="produto-display" dir-paginate="item in listaProdutosGeral | filter: query | orderBy: sortkey: reverse | itemsPerPage: numItemsPerPage">
+                                        <div class="row">
+                                            <div class="col-xs-2 col-sm-1">
+                                                <div class="">
+                                                    <a href=""><img alt="image" ng-src="{{ item.thumbnail }}"></a>
+                                                </div>
+                                            </div>
+                                            <div class="col-xs-10 col-sm-6 col-md-6 col-lg-7">
+                                                <div class="produto-list-ml-title">
+                                                    <a href="#!/produtos/{{ item._id }}">{{ item.title }}</a>
+                                                    <br/>
+                                                    <small>Vendas: {{ item.historico[item.historico.length-1].venda }}</small>&nbsp;&nbsp;
+                                                    <small>Média: {{ item.media.venda | number: 2 }}</small>&nbsp;&nbsp;
+                                                    <small>Preço: {{ item.price | currency: 'R$ ' }}</small>
+                                                </div>
+                                            </div>
+
+                                            <div class="hidden-xs col-sm-5 col-md-4 col-lg-3">
+                                                <div class="produto-list-ml-action">
+                                                    <a ng-click="" class="btn btn-white btn-sm pull-right"><i class="fa fa-times"></i></a>
+                                                    <a ng-click="addProdutoVistaUpdate(item)" class="btn btn-white btn-sm pull-right"><i class="fa fa-plus"></i></a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+
+                            </div>
+                            <div class="row">
+                                <div class="d-pagination">
+                                    <dir-pagination-controls class="col-xs-12"
+                                                             max-size="5"
+                                                             direction-links="true"
+                                                             boundary-links="true"
+                                    >
+                                    </dir-pagination-controls>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

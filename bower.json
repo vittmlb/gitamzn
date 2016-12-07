@@ -1,0 +1,35 @@
+{
+  "name": "impAmazon",
+  "authors": [
+    "Vittorio <vittorio.cadastro@gmail.com>"
+  ],
+  "description": "Analise Concorrentes",
+  "main": "server.js",
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "./public/bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "~3.3.6",
+    "angular": "~1.5.3",
+    "angular-route": "~1.5.3",
+    "angular-resource": "~1.5.3",
+    "angularUtils-pagination": "angular-utils-pagination#^0.11.1",
+    "ngToast": "ngtoast#^2.0.0",
+    "angular-animate": "^1.5.5",
+    "angular-ui-router": "^0.3.0",
+    "ng-file-upload": "^12.0.4",
+    "angular-bootstrap": "^2.0.1",
+    "metisMenu": "^2.5.2",
+    "slick-carousel": "^1.6.0",
+    "angular-slick": "^0.2.1",
+    "AngularJS-Toaster": "angularjs-toaster#^2.0.0",
+    "ngSweetAlert": "angular-sweetalert#^1.1.1"
+  }
+}

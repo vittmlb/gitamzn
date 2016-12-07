@@ -1,0 +1,42 @@
+<br/>
+<div class="row wrapper border-bottom white-bg page-heading">
+    <div class="col-sm-4">
+        <h2>Cadastro de Produto</h2>
+        <ol class="breadcrumb">
+            <li>
+                <a ui-sref="produtos_list">Home</a>
+            </li>
+            <li class="active">
+                <strong>Cadastro de Produto</strong>
+            </li>
+        </ol>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-lg-12">
+        <div class="wrapper wrapper-content animated fadeInUp" ng-controller="ListProdutosController">
+
+            <div class="ibox">
+                <div class="ibox-title">
+                    <h5>Lista com os produtos acompanhados</h5>
+                </div>
+                <div class="ibox-content">
+                    <div class="row m-b-sm m-t-sm">
+                        <form data-ng-submit="create()" novalidate>
+                            <div class="col-xs-12">
+                                <div class="form-group">
+                                    <label for="produtoUrl"> Url do Produto</label>
+                                    <input type="text" id="produtoUrl" class="form-control" placeholder="Entre com a url do Produto" data-ng-model="produtoUrl" required>
+                                    <small class="text-muted" data-ng-bind="error"></small>
+                                </div>
+                                <input type="submit" class="btn btn-info" value="Cadastrar">
+                                <br><br>
+                            </div>
+                        </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>

@@ -1,0 +1,91 @@
+body {
+
+}
+footer {
+    left: 0;
+    bottom: 0;
+    height: 100px;
+    width: 100%;
+    background-color: #2c3e50;
+    clear: both;
+    z-index: 999;
+    margin-top: 30px;
+}
+
+/** Container Produto **/
+.panel-produto {
+
+}
+.panel-produto figure {
+    margin: 5px auto;
+}
+#panel-tools button {
+    margin-top: 28px;
+    margin-left: 10px;
+}
+#panel-descricao h4 {
+    font-family: "Calibri", Helvetica, Arial, sans-serif;
+    font-size: 1.5em;
+    margin-top: 4px;
+}
+#panel-descricao label {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 1.1em;
+    font-weight: 400;
+}
+#panel-descricao #lbl_media {
+    margin-left: 10%;
+}
+#panel-descricao #lbl_preco {
+    display: block;
+    margin-top: 3px;
+}
+#panel-descricao span {
+    color: #3e5c85;
+    font-size: 1em;
+    font-family: "Source Code Pro", Helvetica, Arial, sans-serif;
+}
+#panel-descricao #lbl_preco span {
+    padding-left: 1%;
+}
+#panel-descricao #lbl_vendas span {
+    padding-left: 0.5%;
+}
+#panel-descricao .info-venda {
+    padding-left: 8%;
+}
+
+@media screen and (max-width: 1210px) {
+    #panel-descricao h4 {
+        font-family: "Calibri", Helvetica, Arial, sans-serif;
+        font-size: 1.2em;
+        margin-top: 4px;
+    }
+}
+@media screen and (max-width: 760px) {
+    #panel-descricao h4 {
+        font-family: "Calibri", Helvetica, Arial, sans-serif;
+        font-size: .9em;
+        margin-top: 4px;
+    }
+    #panel-descricao label {
+        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+        font-size: .8em;
+        font-weight: 400;
+    }
+    #panel-descricao span {
+        color: #3e5c85;
+        font-size: .9em;
+        font-family: "Source Code Pro", Helvetica, Arial, sans-serif;
+    }
+}
+
+/** Page - List Produtos **/
+
+.list-toolbar div {
+    margin-bottom: 10px;
+}
+.d-pagination {
+    padding: 0 auto;
+}
+
