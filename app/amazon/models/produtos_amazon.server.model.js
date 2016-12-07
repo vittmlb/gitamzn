@@ -157,4 +157,4 @@ function dayDiff(firstDate, secondDate) {
 }
 
 
-mongoose.model('Produto', ProdutoAmazonSchema);
+mongoose.model('ProdutoAmazon', ProdutoAmazonSchema);

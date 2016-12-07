@@ -2,31 +2,31 @@
  * Created by Vittorio on 02/12/2016.
  */
 
-var util = require('util');
-var OperationHelper = require('apac').OperationHelper;
-var scrapy = require('node-scrapy');
-var scraperjs = require('scraperjs');
+let util = require('util');
+let OperationHelper = require('apac').OperationHelper;
+let scrapy = require('node-scrapy');
+let scraperjs = require('scraperjs');
 
-var Produtos = require('mongoose').model('Produto');
+let ProdutosAmazon = require('mongoose').model('ProdutoAmazon');
 
-var opHelper = new OperationHelper({
+let opHelper = new OperationHelper({
     awsId: 'AKIAICS5AM5V3NYB6VDA',
     awsSecret: '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',
     assocId: 'myinexcoapp-20'
 });
 
-var optionsA = {'SearchIndex': 'HomeGarden', 'Keywords': 'spin mop', 'ResponseGroup': 'ItemAttributes,Offers, Cart, Images, Reviews, SalesRank, SearchBins, TopSellers'};
+let optionsA = {'SearchIndex': 'HomeGarden', 'Keywords': 'spin mop', 'ResponseGroup': 'ItemAttributes,Offers, Cart, Images, Reviews, SalesRank, SearchBins, TopSellers'};
 
 exports.create = function(req, res) {
-    var id = extraiIdProduto(req.body.produtoUrl);
+    let id = extraiIdProduto(req.body.produtoUrl);
     opHelper.execute('ItemLookup', {
         'IdType': 'ASIN',
         'ItemId': id,
         'ResponseGroup': 'ItemAttributes,Images'
     }).then((result) => {
         let item = result.result.ItemLookupResponse.Items.Item;
-        let produto = new Produtos(item);
-        scraperjs.StaticScraper.create(produto.DetailPageURL).scrape(function ($) {
+        let produtoAmazon = new ProdutosAmazon(item);
+        scraperjs.StaticScraper.create(produtoAmazon.DetailPageURL).scrape(function ($) {
             return {
                 numReviews: $('span #acrCustomerReviewText').get()[0].children[0].data,
                 numStars: $('#acrPopover').get()[0].attribs.title,
@@ -35,21 +35,21 @@ exports.create = function(req, res) {
             let numReviews = extraiNumReviews(result.numReviews);
             let numStars = extraiNumStars(result.numStars);
             let historico = {};
-            if(produto.historico.length == 0) {
+            if(produtoAmazon.historico.length == 0) {
                 historico.venda_da_data = 0;
             } else {
-                historico.venda_da_data = numReviews - produto.historico[produto.historico.length - 1].venda;
+                historico.venda_da_data = numReviews - produtoAmazon.historico[produtoAmazon.historico.length - 1].venda;
             }
             historico.venda = numReviews;
             historico.num_stars = numStars;
-            produto.historico.push(historico);
-            produto.save(function (err) {
+            produtoAmazon.historico.push(historico);
+            produtoAmazon.save(function (err) {
                 if(err) {
                     return res.status(400).send({
                         message: err
                     });
                 } else {
-                    res.json(produto);
+                    res.json(produtoAmazon);
                 }
             });
         });
@@ -57,78 +57,78 @@ exports.create = function(req, res) {
 };
 
 exports.list = function(req, res) {
-    Produtos.find().sort('-created').exec(function (err, produtos) {
+    ProdutosAmazon.find().sort('-created').exec(function (err, produtosAmazon) {
         if(err) {
             return res.status(400).send({
                 message: err
             });
         } else {
-            res.json(produtos);
+            res.json(produtosAmazon);
         }
     });
 };
 
 exports.read = function(req, res) {
-    res.json(req.produto);
+    res.json(req.produtoAmazon);
 };
 
 exports.findById = function(req, res, next, id) {
-    Produtos.findById(id).exec(function (err, produto) {
+    ProdutosAmazon.findById(id).exec(function (err, produtoAmazon) {
         if(err) return next(err);
-        if(!produto) return next(new Error(`Failed to LOAD produto id: ${id}`));
-        req.produto = produto;
+        if(!produtoAmazon) return next(new Error(`Failed to LOAD produtoAmazon id: ${id}`));
+        req.produtoAmazon = produtoAmazon;
         next();
     });
 };
 
 exports.update = function(req, res) {
-    var produto = req.produto;
-    scraperjs.StaticScraper.create(produto.DetailPageURL).scrape(function ($) {
+    let produtoAmazon = req.produtoAmazon;
+    scraperjs.StaticScraper.create(produtoAmazon.DetailPageURL).scrape(function ($) {
         return $('#acrCustomerReviewText').get();
     }).then(function (result) {
-        var data  = result[0].children[0].data;
-        var numReviews = extraiNumReviews(data);
+        let data  = result[0].children[0].data;
+        let numReviews = extraiNumReviews(data);
 
-        res.json(produto);
+        res.json(produtoAmazon);
     });
 };
 
 exports.delete = function(req, res) {
-    let produto = req.produto;
-    produto.remove(function (err) {
+    let produtoAmazon = req.produtoAmazon;
+    produtoAmazon.remove(function (err) {
         if(err) {
             return res.status(400).send({
                 message: err
             });
         } else {
-            res.json(produto);
+            res.json(produtoAmazon);
         }
     });
 };
 
 exports.updateSoldQuantity = function(req, res) {
-    let produto = req.produto;
-    scraperjs.StaticScraper.create(produto.DetailPageURL).scrape(function ($) {
+    let produtoAmazon = req.produtoAmazon;
+    scraperjs.StaticScraper.create(produtoAmazon.DetailPageURL).scrape(function ($) {
         return $('#acrCustomerReviewText').get();
     }).then(function (result) {
         let data = result[0].children[0].data;
         let numReviews = extraiNumReviews(result.numReviews);
         let numStars = extraiNumStars(result.numStars);
         let historico = {};
-        if(produto.historico.length == 0) {
+        if(produtoAmazon.historico.length == 0) {
             historico.venda_da_data = 0;
         } else {
-            historico.venda_da_data = numReviews - produto.historico[produto.historico.length - 1].venda;
+            historico.venda_da_data = numReviews - produtoAmazon.historico[produtoAmazon.historico.length - 1].venda;
         }
         historico.venda = numReviews;
-        produto.historico.push(historico);
-        produto.save(function (err) {
+        produtoAmazon.historico.push(historico);
+        produtoAmazon.save(function (err) {
             if(err) {
                 return res.status(400).send({
                     message: err
                 });
             } else {
-                res.json(produto);
+                res.json(produtoAmazon);
             }
         });
     });
@@ -149,8 +149,8 @@ exports.listar = function(req, res) {
 };
 
 function extraiIdProduto(str) {
-    var re = /dp\/\w{10}/;
-    var m;
+    let re = /dp\/\w{10}/;
+    let m;
 
     if ((m = re.exec(str)) !== null) {
         if (m.index === re.lastIndex) {
