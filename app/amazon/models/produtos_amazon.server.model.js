@@ -115,6 +115,12 @@ var ProdutoAmazonSchema = new Schema({
             num_stars: Number
         }
     ],
+    LargeImage: {
+        URL: {
+            type: String,
+            trim: true
+        }
+    },
     virtual: {}
 });
 
@@ -129,6 +135,9 @@ ProdutoAmazonSchema.virtual('media.venda').get(function () {
 });
 
 ProdutoAmazonSchema.virtual('virtual.thumbnail').get(function () {
+    if (this.LargeImage.URL) {
+        return this.LargeImage.URL
+    }
     return this.ImageSets.ImageSet[0].LargeImage.URL;
 });
 
