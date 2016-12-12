@@ -1,7 +1,7 @@
 /**
  * Created by Vittorio on 02/12/2016.
  */
-var produtos_amazon = require('../controllers/produtos_amazon.server.controller.js');
+let produtos_amazon = require('../controllers/produtos_amazon.server.controller.js');
 
 module.exports = function(app) {
 

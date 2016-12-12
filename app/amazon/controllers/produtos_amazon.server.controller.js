@@ -109,9 +109,11 @@ exports.delete = function(req, res) {
 exports.updateSoldQuantity = function(req, res) {
     let produtoAmazon = req.produtoAmazon;
     scraperjs.StaticScraper.create(produtoAmazon.DetailPageURL).scrape(function ($) {
-        return $('#acrCustomerReviewText').get();
+        return {
+            numReviews: $('span #acrCustomerReviewText').get()[0].children[0].data,
+            numStars: $('#acrPopover').get()[0].attribs.title,
+        };
     }).then(function (result) {
-        let data = result[0].children[0].data;
         let numReviews = extraiNumReviews(result.numReviews);
         let numStars = extraiNumStars(result.numStars);
         let historico = {};
@@ -121,6 +123,7 @@ exports.updateSoldQuantity = function(req, res) {
             historico.venda_da_data = numReviews - produtoAmazon.historico[produtoAmazon.historico.length - 1].venda;
         }
         historico.venda = numReviews;
+        historico.num_stars = numStars;
         produtoAmazon.historico.push(historico);
         produtoAmazon.save(function (err) {
             if(err) {

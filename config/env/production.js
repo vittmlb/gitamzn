@@ -3,5 +3,6 @@
  */
 module.exports = {
     sessionSecret: 'mSecret',
-    db: 'mongodb://localhost/impAmazon'
+    // db: 'mongodb://localhost/impAmazon'
+    db: 'mongodb://vmlb:Utld2287@ds053186.mlab.com:53186/dbconcorrentes'
 };

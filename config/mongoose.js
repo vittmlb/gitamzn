@@ -11,7 +11,7 @@ module.exports = function() {
         console.log(`Mongoose conencted at ${config.db}`);
     });
 
-    mongoose.connection.on('error', function () {
+    mongoose.connection.on('error', function (err) {
         console.log(`Mongoose connection error: ${err}`);
     });
 
