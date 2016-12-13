@@ -27,8 +27,9 @@ module.exports = function() {
     });
 
     require('../app/amazon/models/produtos_amazon.server.model.js');
+    require('../app/amazon/models/vistas_amazon.server.model');
     require('../app/models/vendedores_ml.server.model');
-    require('../app/models/vistas.server.model');
+    // require('../app/models/vistas.server.model');
     
     return db;
     

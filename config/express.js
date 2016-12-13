@@ -1,24 +1,24 @@
 /**
  * Created by Vittorio on 10/05/2016.
  */
-var config = require('./config');
-var express = require('express');
-var http = require('http');
-var https = require('https');
-var cors = require('cors');
-var flash = require('connect-flash');
-var methodOverride = require('method-override');
-var path = require('path');
-var morgan = require('morgan');
-var compress = require('compression');
-var bodyParser = require('body-parser');
-var session = require('express-session');
-var request = require('request');
-var Schedule = require('node-schedule');
+let config = require('./config');
+let express = require('express');
+let http = require('http');
+let https = require('https');
+let cors = require('cors');
+let flash = require('connect-flash');
+let methodOverride = require('method-override');
+let path = require('path');
+let morgan = require('morgan');
+let compress = require('compression');
+let bodyParser = require('body-parser');
+let session = require('express-session');
+let request = require('request');
+let Schedule = require('node-schedule');
 
 module.exports = function() {
 
-    var app = express();
+    let app = express();
 
     if(process.env.NODE_env === 'development') {
         app.use(morgan('dev'));
@@ -38,8 +38,7 @@ module.exports = function() {
     }));
 
     app.get('/fetch', function (req, res) {
-        var url = 'http://lista.mercadolivre.com.br/_CustId_93749855';
-        var url2 = 'http://www.google.com';
+        let url = 'http://lista.mercadolivre.com.br/_CustId_93749855';
         request(url, function (error, response, body) {
             if(!error && response.statusCode == 200) {
                 res.send(body);
@@ -50,9 +49,8 @@ module.exports = function() {
     app.use(express.static('./public'));
 
     require('../app/routes/vendedores_ml.server.routes')(app);
-    require('../app/routes/vistas.server.routes')(app);
     require('../app/amazon/routes/produtos_amazon.server.routes.js')(app);
-
+    require('../app/amazon/routes/vistas_amazon.server.routes')(app);
 
     return app;
 

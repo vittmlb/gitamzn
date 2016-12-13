@@ -113,17 +113,17 @@
                                         <div class="row">
                                             <div class="col-xs-1">
                                                 <div class="">
-                                                    <a href=""><img alt="image" ng-src="{{item.thumbnail}}"></a>
+                                                    <a href=""><img alt="image" ng-src="{{item.virtual.thumbnail}}"></a>
                                                 </div>
                                             </div>
                                             <div class="col-xs-6">
                                                 <div class="produto-list-ml-title" style="margin-top: 20px;">
-                                                    <a href="#!/produtos/{{ item._id }}">{{ item.title }}</a>
+                                                    <a href="#!/produtos/{{ item._id }}">{{ item.virtual.title | limitTo: 50 }}</a>
                                                     <br/>
                                                     <!--<small>Vendas: {{item.historico[item.historico.length-1].venda}}</small>&nbsp;&nbsp;-->
                                                     <!--<small>Média: {{item.media.venda | number: 2}}</small>-->
-                                                    <small>Criado em: {{ item.start_time | date: 'dd/MM/yyyy' }}</small>
-                                                    <small>Preço: {{item.price | currency: 'R$ '}}</small>
+                                                    <small>Criado em: {{ item.created | date: 'dd/MM/yyyy' }}</small>
+                                                    <small>Preço: {{item.virtual.price | currency: 'U$ '}}</small>
                                                 </div>
                                             </div>
                                             <div class="col-xs-1 text-right">

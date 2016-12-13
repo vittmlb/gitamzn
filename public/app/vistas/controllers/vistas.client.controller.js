@@ -1,8 +1,8 @@
 /**
  * Created by Vittorio on 28/09/2016.
  */
-angular.module('vistas').controller('VistasController', ['$scope', '$stateParams', '$location', 'Vistas', 'ProdutosML', 'toaster', 'SweetAlert',
-    function($scope, $stateParams, $location, Vistas, ProdutosML, toaster, SweetAlert) {
+angular.module('vistas').controller('VistasController', ['$scope', '$stateParams', '$location', 'Vistas', 'Produtos', 'toaster', 'SweetAlert',
+    function($scope, $stateParams, $location, Vistas, Produtos, toaster, SweetAlert) {
 
         $scope.sortkey = 'media.venda';
         $scope.reverse = true;
@@ -13,7 +13,7 @@ angular.module('vistas').controller('VistasController', ['$scope', '$stateParams
             $scope.sortkey = keyname;
         };
 
-        $scope.listaProdutosGeral = ProdutosML.query();
+        $scope.listaProdutosGeral = Produtos.query();
         $scope.listaProdutosVista = [];
 
         var SweetAlertOptions = {
@@ -49,7 +49,7 @@ angular.module('vistas').controller('VistasController', ['$scope', '$stateParams
             $scope.vistas = Vistas.query();
         };
         $scope.findOne = function() {
-            ProdutosML.query().$promise.then(function(lista) {
+            Produtos.query().$promise.then(function(lista) {
                 $scope.listaProdutosGeral = lista;
                 Vistas.get({
                     vistaId: $stateParams.vistaId

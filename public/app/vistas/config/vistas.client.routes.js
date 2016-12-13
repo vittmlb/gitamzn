@@ -5,22 +5,22 @@ angular.module('vistas').config(['$stateProvider',
     function($stateProvider) {
         $stateProvider
             .state('vistas_create', {
-                url: '/vistas/create',
+                url: '/vistas_amazon/create',
                 templateUrl: 'app/vistas/views/create-vista.client.view.html',
                 controller: 'VistasController'
             })
             .state('vistas_list', {
-                url: '/vistas',
+                url: '/vistas_amazon',
                 templateUrl: 'app/vistas/views/list-vistas.client.view.html',
                 controller: 'VistasController'
             })
             .state('vistas_view', {
-                url: '/vistas/:vistaId',
+                url: '/vistas_amazon/:vistaId',
                 templateUrl: 'app/vistas/views/view-vista.client.view.html',
                 controller: 'VistasController'
             })
             .state('vistas_edit', {
-                url: '/vistas/:vistaId/edit',
+                url: '/vistas_amazon/:vistaId/edit',
                 templateUrl: 'app/vistas/views/edit-vista.client.view.html',
                 controller: 'VistasController'
             });

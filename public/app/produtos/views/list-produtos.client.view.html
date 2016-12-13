@@ -76,14 +76,14 @@
                                             <div class="produto-list-ml-title">
                                                 <a href="#!/produtos/{{ item._id }}">{{ item.virtual.title | limitTo: 60}}</a>
                                                 <br/>
-                                                <small>Vendas: {{item.historico[item.historico.length-1].venda}}</small>&nbsp;&nbsp;
+                                                <small>Reviews: {{item.historico[item.historico.length-1].venda}}</small>&nbsp;&nbsp;
                                                 <small>Média: {{item.media.venda | number: 2}}</small>&nbsp;&nbsp;
                                                 <small>Preço: {{item.virtual.price | currency: 'U$ '}}</small>
                                             </div>
                                         </div>
                                         <div class="visible-lg col-lg-1 text-right">
                                             <div style="margin-top: 10px;">
-                                                <span>Vendas</span>
+                                                <span>Reviews</span>
                                                 <h2 class="font-bold">{{item.historico[item.historico.length-1].venda}}</h2>
                                             </div>
                                         </div>

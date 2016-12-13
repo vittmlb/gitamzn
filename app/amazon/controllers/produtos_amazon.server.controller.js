@@ -81,17 +81,17 @@ exports.findById = function(req, res, next, id) {
     });
 };
 
-exports.update = function(req, res) {
-    let produtoAmazon = req.produtoAmazon;
-    scraperjs.StaticScraper.create(produtoAmazon.DetailPageURL).scrape(function ($) {
-        return $('#acrCustomerReviewText').get();
-    }).then(function (result) {
-        let data  = result[0].children[0].data;
-        let numReviews = extraiNumReviews(data);
-
-        res.json(produtoAmazon);
-    });
-};
+// exports.update = function(req, res) {
+//     let produtoAmazon = req.produtoAmazon;
+//     scraperjs.StaticScraper.create(produtoAmazon.DetailPageURL).scrape(function ($) {
+//         return $('#acrCustomerReviewText').get();
+//     }).then(function (result) {
+//         let data  = result[0].children[0].data;
+//         let numReviews = extraiNumReviews(data);
+//
+//         res.json(produtoAmazon);
+//     });
+// };
 
 exports.delete = function(req, res) {
     let produtoAmazon = req.produtoAmazon;
@@ -128,7 +128,7 @@ exports.updateSoldQuantity = function(req, res) {
         produtoAmazon.save(function (err) {
             if(err) {
                 return res.status(400).send({
-                    message: err
+                    message: `${produtoAmazon.virtual.title} / ${err}`
                 });
             } else {
                 res.json(produtoAmazon);
