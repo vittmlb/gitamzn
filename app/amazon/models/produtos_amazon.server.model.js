@@ -39,7 +39,14 @@ var ProdutoAmazonSchema = new Schema({
             type: String,
             trim: true
         },
-        ListPrice: {},
+        ListPrice: {
+            FormattedePrice: {},
+            CurrencyCode: {},
+            Amount: {
+                type: Number,
+                default: 0
+            }
+        },
         MPN: {
             type: String,
             trim: true
@@ -146,7 +153,10 @@ ProdutoAmazonSchema.virtual('virtual.title').get(function () {
 });
 
 ProdutoAmazonSchema.virtual('virtual.price').get(function () {
-    return this.ItemAttributes.ListPrice.Amount / 100;
+    if (this.ItemAttributes.ListPrice.Amount) {
+        return this.ItemAttributes.ListPrice.Amount / 100;
+    }
+    return 0;
 });
 
 ProdutoAmazonSchema.virtual('virtual.categoria').get(function () {
