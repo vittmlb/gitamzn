@@ -55,7 +55,7 @@ exports.create = function(req, res) {
             });
         }).catch(function (err) {
             return res.status(400).send({
-                message: err
+                message: `Erro !! Cod: ${err.code} - ${err.message}`
             });
         });
     });
