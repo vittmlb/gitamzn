@@ -2,8 +2,20 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="642d4d7d-6ee3-4422-a31e-3a7677c6193b" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/amazon/controllers/buscas_amazon.server.controller.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/amazon/routes/buscas_amazon.server.controller.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/mongoSettings.xml" afterPath="$PROJECT_DIR$/.idea/mongoSettings.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/amazon/controllers/produtos_amazon.server.controller.js" afterPath="$PROJECT_DIR$/app/amazon/controllers/produtos_amazon.server.controller.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/amazon/controllers/vistas_amazon.server.controller.js" afterPath="$PROJECT_DIR$/app/amazon/controllers/vistas_amazon.server.controller.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/amazon/models/produtos_amazon.server.model.js" afterPath="$PROJECT_DIR$/app/amazon/models/produtos_amazon.server.model.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/amazon/routes/produtos_amazon.server.routes.js" afterPath="$PROJECT_DIR$/app/amazon/routes/produtos_amazon.server.routes.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/config.js" afterPath="$PROJECT_DIR$/config/config.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/env/development.js" afterPath="$PROJECT_DIR$/config/env/development.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/app/produtos/controllers/produtos.client.controller.js" afterPath="$PROJECT_DIR$/public/app/produtos/controllers/produtos.client.controller.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/app/produtos/views/list-produtos.client.view.html" afterPath="$PROJECT_DIR$/public/app/produtos/views/list-produtos.client.view.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/app/produtos/views/view-produto.client.view.html" afterPath="$PROJECT_DIR$/public/app/produtos/views/view-produto.client.view.html" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -24,12 +36,119 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/.gitignore">
+      <file leaf-file-name="produtos_amazon.server.model.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/amazon/models/produtos_amazon.server.model.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="5" column="0" lean-forward="false" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="5" />
+            <state relative-caret-position="412">
+              <caret line="124" column="6" lean-forward="true" selection-start-line="124" selection-start-column="6" selection-end-line="124" selection-end-column="6" />
+              <folding>
+                <element signature="e#165#218#0" expanded="false" />
+                <element signature="e#230#348#0" expanded="false" />
+                <element signature="e#369#417#0" expanded="false" />
+                <element signature="e#439#2141#0" expanded="false" />
+                <element signature="e#458#518#0" expanded="false" />
+                <element signature="e#535#595#0" expanded="false" />
+                <element signature="e#610#670#0" expanded="false" />
+                <element signature="e#763#823#0" expanded="false" />
+                <element signature="e#844#1011#0" expanded="false" />
+                <element signature="e#1026#1086#0" expanded="false" />
+                <element signature="e#1257#1282#0" expanded="false" />
+                <element signature="e#1471#1531#0" expanded="false" />
+                <element signature="e#1558#1618#0" expanded="false" />
+                <element signature="e#1639#1699#0" expanded="false" />
+                <element signature="e#1744#1804#0" expanded="false" />
+                <element signature="e#1822#1882#0" expanded="false" />
+                <element signature="e#1899#1959#0" expanded="false" />
+                <element signature="e#1974#2034#0" expanded="false" />
+                <element signature="e#2075#2135#0" expanded="false" />
+                <element signature="e#2158#2299#0" expanded="false" />
+                <element signature="e#2346#2423#0" expanded="false" />
+                <element signature="e#2772#2853#0" expanded="false" />
+                <element signature="e#2910#2951#0" expanded="false" />
+                <element signature="e#3014#3234#0" expanded="false" />
+                <element signature="e#3584#3713#0" expanded="false" />
+                <element signature="e#3778#3819#0" expanded="false" />
+                <element signature="e#3884#4014#0" expanded="false" />
+                <element signature="e#4083#4131#0" expanded="false" />
+                <element signature="e#4200#4267#0" expanded="false" />
+                <element signature="e#4338#4402#0" expanded="false" />
+                <element signature="e#4486#5272#0" expanded="false" />
+                <element signature="n#!!block;n#dayDiff#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="produtos_amazon.server.controller.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/amazon/controllers/produtos_amazon.server.controller.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-231">
+              <caret line="19" column="36" lean-forward="false" selection-start-line="19" selection-start-column="36" selection-end-line="19" selection-end-column="36" />
+              <folding>
+                <element signature="e#645#2404#0" expanded="false" />
+                <element signature="e#1064#1266#0" expanded="false" />
+                <element signature="e#2441#2743#0" expanded="false" />
+                <element signature="e#2780#2816#0" expanded="false" />
+                <element signature="e#2867#3173#0" expanded="false" />
+                <element signature="e#3216#3870#0" expanded="false" />
+                <element signature="e#3909#4214#0" expanded="false" />
+                <element signature="e#5535#5968#0" expanded="false" />
+                <element signature="n#!!block;n#extraiIdProdutoOld#0" expanded="false" />
+                <element signature="n#!!block;n#extraiIdProduto#0" expanded="false" />
+                <element signature="n#!!block;n#extraiNumReviews#0" expanded="false" />
+                <element signature="n#!!block;n#extraiNumStars#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="produtos_amazon.server.routes.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/amazon/routes/produtos_amazon.server.routes.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="216">
+              <caret line="8" column="34" lean-forward="false" selection-start-line="8" selection-start-column="34" selection-end-line="8" selection-end-column="34" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="list-produtos.client.view.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public/app/produtos/views/list-produtos.client.view.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="27">
+              <caret line="93" column="98" lean-forward="false" selection-start-line="93" selection-start-column="98" selection-end-line="93" selection-end-column="98" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="view-produto.client.view.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public/app/produtos/views/view-produto.client.view.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="353">
+              <caret line="236" column="50" lean-forward="false" selection-start-line="236" selection-start-column="50" selection-end-line="236" selection-end-column="50" />
+              <folding>
+                <element signature="n#style#0;n#h5#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="produtos.client.controller.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public/app/produtos/controllers/produtos.client.controller.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-827">
+              <caret line="90" column="40" lean-forward="true" selection-start-line="90" selection-start-column="40" selection-end-line="90" selection-end-column="40" />
+              <folding>
+                <element signature="e#925#1773#0" expanded="false" />
+                <element signature="e#1845#2235#0" expanded="false" />
+                <element signature="e#2275#2359#0" expanded="false" />
+                <element signature="e#3321#3973#0" expanded="false" />
+                <element signature="e#4008#4122#0" expanded="false" />
+                <element signature="e#4160#4596#0" expanded="false" />
+                <element signature="e#4633#4778#0" expanded="false" />
+                <element signature="e#4827#5098#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -55,6 +174,14 @@
       <find>price</find>
       <find>item.price</find>
       <find>Ins</find>
+      <find>of 5 stars</find>
+      <find>Incom</find>
+      <find>media.venda</find>
+      <find>venda</find>
+      <find>Média</find>
+      <find>Reviews</find>
+      <find>Histórico</find>
+      <find>Carac</find>
     </findStrings>
     <replaceStrings>
       <replace>ProdutoAmazonSchema</replace>
@@ -65,6 +192,8 @@
       <replace>let</replace>
       <replace>Reviews</replace>
       <replace>item.virtual.price</replace>
+      <replace>virtual.media.venda</replace>
+      <replace>historico.</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -93,28 +222,30 @@
         <option value="$PROJECT_DIR$/app/amazon/produtos_amazon.server.routes.js" />
         <option value="$PROJECT_DIR$/public/app/produtos/services/produtos.client.service.js" />
         <option value="$PROJECT_DIR$/public/app/produtos/directives/produtos.client.directives.js" />
-        <option value="$PROJECT_DIR$/public/app/produtos/controllers/produtos.client.controller.js" />
-        <option value="$PROJECT_DIR$/app/amazon/routes/produtos_amazon.server.routes.js" />
-        <option value="$PROJECT_DIR$/config/env/development.js" />
         <option value="$PROJECT_DIR$/config/env/production.js" />
-        <option value="$PROJECT_DIR$/public/app/produtos/views/list-produtos.client.view.html" />
-        <option value="$PROJECT_DIR$/public/app/produtos/views/view-produto.client.view.html" />
-        <option value="$PROJECT_DIR$/app/amazon/controllers/produtos_amazon.server.controller.js" />
         <option value="$PROJECT_DIR$/app/amazon/models/vistas_amazon.server.model.js" />
         <option value="$PROJECT_DIR$/app/amazon/routes/vistas_amazon.server.routes.js" />
         <option value="$PROJECT_DIR$/public/app/vistas/config/vistas.client.routes.js" />
         <option value="$PROJECT_DIR$/public/app/vistas/services/vistas.client.service.js" />
         <option value="$PROJECT_DIR$/public/app/vistas/controllers/vistas.client.controller.js" />
         <option value="$PROJECT_DIR$/config/mongoose.js" />
-        <option value="$PROJECT_DIR$/app/amazon/controllers/vistas_amazon.server.controller.js" />
         <option value="$PROJECT_DIR$/config/express.js" />
         <option value="$PROJECT_DIR$/public/app/vistas/views/create-vista.client.view.html" />
         <option value="$PROJECT_DIR$/public/app/vistas/views/list-vistas.client.view.html" />
         <option value="$PROJECT_DIR$/public/views/common/top_navigation.html" />
-        <option value="$PROJECT_DIR$/app/amazon/models/produtos_amazon.server.model.js" />
-        <option value="$PROJECT_DIR$/app/amazon/controllers/buscas_amazon.server.controller.js" />
         <option value="$PROJECT_DIR$/app/amazon/routes/buscas_amazon.server.routes.js" />
         <option value="$PROJECT_DIR$/.gitignore" />
+        <option value="$PROJECT_DIR$/app/amazon/controllers/buscas_amazon.server.controller.js" />
+        <option value="$PROJECT_DIR$/app/amazon/routes/buscas_amazon.server.controller.js" />
+        <option value="$PROJECT_DIR$/app/amazon/controllers/vistas_amazon.server.controller.js" />
+        <option value="$PROJECT_DIR$/config/config.js" />
+        <option value="$PROJECT_DIR$/config/env/development.js" />
+        <option value="$PROJECT_DIR$/app/amazon/controllers/produtos_amazon.server.controller.js" />
+        <option value="$PROJECT_DIR$/app/amazon/routes/produtos_amazon.server.routes.js" />
+        <option value="$PROJECT_DIR$/public/app/produtos/views/list-produtos.client.view.html" />
+        <option value="$PROJECT_DIR$/public/app/produtos/controllers/produtos.client.controller.js" />
+        <option value="$PROJECT_DIR$/public/app/produtos/views/view-produto.client.view.html" />
+        <option value="$PROJECT_DIR$/app/amazon/models/produtos_amazon.server.model.js" />
       </list>
     </option>
   </component>
@@ -143,7 +274,7 @@
     <ConfirmationsSetting value="2" id="Add" />
   </component>
   <component name="ProjectView">
-    <navigator currentView="Scope" currentSubView="Project Files" proportions="" version="1">
+    <navigator currentView="ProjectPane" proportions="" version="1">
       <flattenPackages />
       <showMembers />
       <showModules />
@@ -157,6 +288,20 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope">
+        <subPane subId="Project Files">
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="impAmazon">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -183,32 +328,182 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
-        </subPane>
-      </pane>
-      <pane id="Scope">
-        <subPane subId="Project Files">
           <PATH>
-            <PATH_ELEMENT USER_OBJECT="Root">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
+            <PATH_ELEMENT>
+              <option name="myItemId" value="impAmazon" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="impAmazon">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
+            <PATH_ELEMENT>
+              <option name="myItemId" value="impAmazon" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="public" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
           <PATH>
-            <PATH_ELEMENT USER_OBJECT="Root">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
+            <PATH_ELEMENT>
+              <option name="myItemId" value="impAmazon" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="impAmazon">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
+            <PATH_ELEMENT>
+              <option name="myItemId" value="impAmazon" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT=".idea">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
+            <PATH_ELEMENT>
+              <option name="myItemId" value="public" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="produtos" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="impAmazon" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="impAmazon" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="public" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="produtos" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="impAmazon" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="impAmazon" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="config" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="impAmazon" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="impAmazon" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="config" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="env" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="impAmazon" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="impAmazon" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="impAmazon" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="impAmazon" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="amazon" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="routes" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="impAmazon" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="impAmazon" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="amazon" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="models" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="impAmazon" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="impAmazon" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="amazon" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="controllers" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
@@ -221,7 +516,7 @@
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="options.splitter.details.proportions" value="0.2" />
     <property name="options.searchVisible" value="true" />
-    <property name="settings.editor.selected.configurable" value="JavaScript.Libraries" />
+    <property name="settings.editor.selected.configurable" value="preferences.mongoOptions" />
     <property name="JavaScriptPreferStrict" value="false" />
     <property name="JavaScriptWeakerCompletionTypeGuess" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
@@ -328,7 +623,7 @@
       <method />
     </configuration>
     <configuration default="true" type="js.build_tools.npm" factoryName="npm">
-      <command value="run-script" />
+      <command value="run" />
       <scripts />
       <node-interpreter value="project" />
       <envs />
@@ -380,7 +675,11 @@
       <workItem from="1481491513619" duration="5631000" />
       <workItem from="1481553669855" duration="17000" />
       <workItem from="1481553701009" duration="12839000" />
-      <workItem from="1481635488410" duration="2675000" />
+      <workItem from="1481635488410" duration="12431000" />
+      <workItem from="1481663796353" duration="39000" />
+      <workItem from="1481663873939" duration="3876000" />
+      <workItem from="1481675932075" duration="9554000" />
+      <workItem from="1482085179158" duration="4747000" />
     </task>
     <servers>
       <Wrike shared="false" url="">
@@ -413,7 +712,7 @@
         </w_my_contact>
         <w_credentials>
           <WrikeOAuth2Data>
-            <option name="accessToken" value="75PbAc3zow9L1WD8wLNachvzggrC0LuNsC38NZvpmmPhNslSzZbA2qiTxeXsTbLm-N-N" />
+            <option name="accessToken" value="b4LrvqfybmmV83rxgVnsVBAgJ8BBu7SqqOjOeT1FlYmtZZCMBu1GVRONGeEJX9PB-N-N" />
             <option name="host" value="www.wrike.com" />
             <option name="refreshToken" value="9Vv89XqYMTATLaV7W0AMVIEiWtivaQoiE41BMYFfd8fVhebI1AxPhX1a9B4tcxde-A-N" />
           </WrikeOAuth2Data>
@@ -481,104 +780,81 @@
     </servers>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="86387000" />
+    <option name="totallyTimeSpent" value="114359000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Regex Tester" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32998884" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32998884" sideWeight="0.50186664" order="0" side_tool="true" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32998884" sideWeight="0.49813333" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Mongo Explorer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.16373333" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32998884" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2176" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25546667" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="YouTrack" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Wrike" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.23946667" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.33333334" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.37012264" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32998884" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="processedProjectFiles" value="true" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="RECENTLY_FILTERED_USER_GROUPS">
+                <collection />
+              </option>
+              <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+                <collection />
+              </option>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="task-124767091-xxx-alterar-todos-os-campos-onde-consta-venda-para-review-" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/app/amazon/controllers/produtos_amazon.server.controller.js</url>
-          <line>27</line>
-          <option name="timeStamp" value="153" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/app/amazon/controllers/produtos_amazon.server.controller.js</url>
-          <line>26</line>
-          <option name="timeStamp" value="154" />
-        </line-breakpoint>
-      </breakpoints>
-      <option name="time" value="175" />
+      <option name="time" value="322" />
     </breakpoint-manager>
     <watches-manager>
       <configuration name="NodeJSConfigurationType">
-        <watch expression="Number(numReviews)" language="JavaScript" />
-        <watch expression="NumberFormat.getNumberInstance(java.util.locale.US).parse(numReviews)" language="JavaScript" />
+        <watch expression="origem" language="JavaScript" />
+        <watch expression="vendaTotal / dayDiff(this.historico[0].data, this.historico[this.historico.length - 1].data)" />
+        <watch expression="this.historico[0].data" />
+        <watch expression="this.historico[this.historico.length - 1].data" />
       </configuration>
       <configuration name="JavascriptDebugType">
-        <watch expression="produto.historico[i].venda" />
-        <watch expression="produto.historico[i - 1].venda" />
+        <watch expression="produto.historico[i].reviews" />
+        <watch expression="produto.historico[i - 1].reviews" />
       </configuration>
     </watches-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/public/app/vistas/views/edit-vista.client.view.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="621">
-          <caret line="23" column="34" lean-forward="false" selection-start-line="23" selection-start-column="34" selection-end-line="23" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/node_modules/aws-lib/test/credentials.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="4" column="1" lean-forward="false" selection-start-line="4" selection-start-column="1" selection-end-line="4" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/node_modules/aws-lib/test/credentials_template.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="54">
-          <caret line="2" column="60" lean-forward="false" selection-start-line="2" selection-start-column="20" selection-end-line="2" selection-end-column="60" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/node_modules/mongoose/lib/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="987">
-          <caret line="361" column="0" lean-forward="false" selection-start-line="361" selection-start-column="0" selection-end-line="361" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/models/produtos_ml.server.model.js" />
     <entry file="file://$PROJECT_DIR$/app/controllers/produtos_ml.server.controller.js" />
     <entry file="file://$PROJECT_DIR$/app/routes/produtos_ml.server.routes.js" />
@@ -639,28 +915,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/config/env/development.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="189">
-          <caret line="7" column="2" lean-forward="false" selection-start-line="7" selection-start-column="2" selection-end-line="7" selection-end-column="2" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="350">
           <caret line="23" column="0" lean-forward="false" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/amazon/routes/produtos_amazon.server.routes.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="12" column="34" lean-forward="true" selection-start-line="12" selection-start-column="34" selection-end-line="12" selection-end-column="34" />
-          <folding>
-            <element signature="e#0#45#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -668,27 +926,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="146">
           <caret line="36" column="0" lean-forward="false" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config/config.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/app/produtos/views/view-produto.client.view.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="189">
-          <caret line="7" column="74" lean-forward="false" selection-start-line="7" selection-start-column="74" selection-end-line="7" selection-end-column="74" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/amazon/routes/vistas_amazon.server.routes.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="297">
-          <caret line="11" column="33" lean-forward="false" selection-start-line="11" selection-start-column="33" selection-end-line="11" selection-end-column="33" />
         </state>
       </provider>
     </entry>
@@ -710,21 +947,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="534">
           <caret line="20" column="15" lean-forward="false" selection-start-line="20" selection-start-column="15" selection-end-line="20" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/app/produtos/controllers/produtos.client.controller.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1728">
-          <caret line="138" column="42" lean-forward="true" selection-start-line="138" selection-start-column="42" selection-end-line="138" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/app/produtos/views/list-produtos.client.view.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="432">
-          <caret line="78" column="62" lean-forward="false" selection-start-line="78" selection-start-column="62" selection-end-line="78" selection-end-column="62" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -767,10 +989,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="459">
           <caret line="17" column="0" lean-forward="true" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
-          <folding>
-            <element signature="e#666#1099#0" expanded="false" />
-            <element signature="e#1136#1772#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -778,14 +996,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="81">
           <caret line="3" column="33" lean-forward="false" selection-start-line="3" selection-start-column="33" selection-end-line="3" selection-end-column="33" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/amazon/controllers/vistas_amazon.server.controller.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="297">
-          <caret line="11" column="15" lean-forward="true" selection-start-line="11" selection-start-column="15" selection-end-line="11" selection-end-column="15" />
         </state>
       </provider>
     </entry>
@@ -793,20 +1003,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="459">
           <caret line="17" column="0" lean-forward="true" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/amazon/controllers/produtos_amazon.server.controller.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1593">
-          <caret line="126" column="7" lean-forward="false" selection-start-line="126" selection-start-column="7" selection-end-line="126" selection-end-column="7" />
-          <folding>
-            <element signature="e#645#2156#0" expanded="false" />
-            <element signature="e#2193#2455#0" expanded="false" />
-            <element signature="e#2492#2528#0" expanded="false" />
-            <element signature="e#2579#2845#0" expanded="false" />
-            <element signature="e#3308#3573#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -821,7 +1017,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="567">
           <caret line="21" column="3" lean-forward="true" selection-start-line="21" selection-start-column="3" selection-end-line="21" selection-end-column="3" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -829,9 +1024,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="346">
           <caret line="117" column="86" lean-forward="true" selection-start-line="117" selection-start-column="86" selection-end-line="117" selection-end-column="86" />
-          <folding>
-            <element signature="n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#0;n#!!top" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -839,7 +1031,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="162">
           <caret line="6" column="50" lean-forward="false" selection-start-line="6" selection-start-column="33" selection-end-line="6" selection-end-column="50" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -847,7 +1038,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="243">
           <caret line="9" column="39" lean-forward="false" selection-start-line="9" selection-start-column="39" selection-end-line="9" selection-end-column="39" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -855,7 +1045,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="359">
           <caret line="32" column="4" lean-forward="true" selection-start-line="32" selection-start-column="4" selection-end-line="32" selection-end-column="4" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -863,26 +1052,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="184">
           <caret line="120" column="124" lean-forward="false" selection-start-line="120" selection-start-column="124" selection-end-line="120" selection-end-column="124" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/amazon/models/produtos_amazon.server.model.js">
+    <entry file="file://$PROJECT_DIR$/app/amazon/routes/buscas_amazon.server.routes.js" />
+    <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="167">
-          <caret line="41" column="19" lean-forward="false" selection-start-line="41" selection-start-column="19" selection-end-line="41" selection-end-column="19" />
-          <folding>
-            <element signature="e#165#218#0" expanded="false" />
-            <element signature="e#230#348#0" expanded="false" />
-            <element signature="e#369#417#0" expanded="false" />
-            <element signature="e#458#518#0" expanded="false" />
-            <element signature="e#535#595#0" expanded="false" />
-            <element signature="e#610#670#0" expanded="false" />
-            <element signature="e#763#823#0" expanded="false" />
-            <element signature="e#844#1011#0" expanded="false" />
-            <element signature="e#2158#2299#0" expanded="false" />
-            <element signature="e#2316#2532#0" expanded="false" />
-          </folding>
+        <state relative-caret-position="270">
+          <caret line="10" column="20" lean-forward="false" selection-start-line="10" selection-start-column="20" selection-end-line="10" selection-end-column="20" />
         </state>
       </provider>
     </entry>
@@ -890,23 +1067,181 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/amazon/routes/buscas_amazon.server.routes.js">
+    <entry file="file://$PROJECT_DIR$/app/amazon/routes/buscas_amazon.server.controller.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="405">
+          <caret line="17" column="0" lean-forward="false" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/scraperjs/bin/scraperjs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1539">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/scraperjs/README.md">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="27">
+          <caret line="1" column="74" lean-forward="false" selection-start-line="1" selection-start-column="17" selection-end-line="1" selection-end-column="74" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/scraperjs/LICENSE">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/scraperjs/src/Scraper.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/amazon/controllers/vistas_amazon.server.controller.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="331">
+          <caret line="59" column="36" lean-forward="false" selection-start-line="59" selection-start-column="36" selection-end-line="59" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Procfile">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/amazon/routes/vistas_amazon.server.routes.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="297">
+          <caret line="11" column="33" lean-forward="false" selection-start-line="11" selection-start-column="33" selection-end-line="11" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/config.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="189">
+          <caret line="7" column="21" lean-forward="true" selection-start-line="7" selection-start-column="21" selection-end-line="7" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/env/development.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="216">
+          <caret line="8" column="2" lean-forward="true" selection-start-line="8" selection-start-column="2" selection-end-line="8" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/amazon/routes/produtos_amazon.server.routes.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="216">
+          <caret line="8" column="34" lean-forward="false" selection-start-line="8" selection-start-column="34" selection-end-line="8" selection-end-column="34" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
+    <entry file="file://$PROJECT_DIR$/public/app/produtos/views/list-produtos.client.view.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="5" column="0" lean-forward="false" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="5" />
+        <state relative-caret-position="27">
+          <caret line="93" column="98" lean-forward="false" selection-start-line="93" selection-start-column="98" selection-end-line="93" selection-end-column="98" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/app/produtos/views/view-produto.client.view.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="353">
+          <caret line="236" column="50" lean-forward="false" selection-start-line="236" selection-start-column="50" selection-end-line="236" selection-end-column="50" />
+          <folding>
+            <element signature="n#style#0;n#h5#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/app/produtos/controllers/produtos.client.controller.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-827">
+          <caret line="90" column="40" lean-forward="true" selection-start-line="90" selection-start-column="40" selection-end-line="90" selection-end-column="40" />
+          <folding>
+            <element signature="e#925#1773#0" expanded="false" />
+            <element signature="e#1845#2235#0" expanded="false" />
+            <element signature="e#2275#2359#0" expanded="false" />
+            <element signature="e#3321#3973#0" expanded="false" />
+            <element signature="e#4008#4122#0" expanded="false" />
+            <element signature="e#4160#4596#0" expanded="false" />
+            <element signature="e#4633#4778#0" expanded="false" />
+            <element signature="e#4827#5098#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/amazon/models/produtos_amazon.server.model.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="412">
+          <caret line="124" column="6" lean-forward="true" selection-start-line="124" selection-start-column="6" selection-end-line="124" selection-end-column="6" />
+          <folding>
+            <element signature="e#165#218#0" expanded="false" />
+            <element signature="e#230#348#0" expanded="false" />
+            <element signature="e#369#417#0" expanded="false" />
+            <element signature="e#439#2141#0" expanded="false" />
+            <element signature="e#458#518#0" expanded="false" />
+            <element signature="e#535#595#0" expanded="false" />
+            <element signature="e#610#670#0" expanded="false" />
+            <element signature="e#763#823#0" expanded="false" />
+            <element signature="e#844#1011#0" expanded="false" />
+            <element signature="e#1026#1086#0" expanded="false" />
+            <element signature="e#1257#1282#0" expanded="false" />
+            <element signature="e#1471#1531#0" expanded="false" />
+            <element signature="e#1558#1618#0" expanded="false" />
+            <element signature="e#1639#1699#0" expanded="false" />
+            <element signature="e#1744#1804#0" expanded="false" />
+            <element signature="e#1822#1882#0" expanded="false" />
+            <element signature="e#1899#1959#0" expanded="false" />
+            <element signature="e#1974#2034#0" expanded="false" />
+            <element signature="e#2075#2135#0" expanded="false" />
+            <element signature="e#2158#2299#0" expanded="false" />
+            <element signature="e#2346#2423#0" expanded="false" />
+            <element signature="e#2772#2853#0" expanded="false" />
+            <element signature="e#2910#2951#0" expanded="false" />
+            <element signature="e#3014#3234#0" expanded="false" />
+            <element signature="e#3584#3713#0" expanded="false" />
+            <element signature="e#3778#3819#0" expanded="false" />
+            <element signature="e#3884#4014#0" expanded="false" />
+            <element signature="e#4083#4131#0" expanded="false" />
+            <element signature="e#4200#4267#0" expanded="false" />
+            <element signature="e#4338#4402#0" expanded="false" />
+            <element signature="e#4486#5272#0" expanded="false" />
+            <element signature="n#!!block;n#dayDiff#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/amazon/controllers/produtos_amazon.server.controller.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-231">
+          <caret line="19" column="36" lean-forward="false" selection-start-line="19" selection-start-column="36" selection-end-line="19" selection-end-column="36" />
+          <folding>
+            <element signature="e#645#2404#0" expanded="false" />
+            <element signature="e#1064#1266#0" expanded="false" />
+            <element signature="e#2441#2743#0" expanded="false" />
+            <element signature="e#2780#2816#0" expanded="false" />
+            <element signature="e#2867#3173#0" expanded="false" />
+            <element signature="e#3216#3870#0" expanded="false" />
+            <element signature="e#3909#4214#0" expanded="false" />
+            <element signature="e#5535#5968#0" expanded="false" />
+            <element signature="n#!!block;n#extraiIdProdutoOld#0" expanded="false" />
+            <element signature="n#!!block;n#extraiIdProduto#0" expanded="false" />
+            <element signature="n#!!block;n#extraiNumReviews#0" expanded="false" />
+            <element signature="n#!!block;n#extraiNumStars#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -916,8 +1251,8 @@
       <map>
         <entry key="flags" value="0" />
         <entry key="mode" value="0" />
-        <entry key="regex" value="^.*out of 5 stars" />
-        <entry key="text" value="4.4 out of 5 stars&#10;" />
+        <entry key="regex" value="/([a-zA-Z0-9]{10})(?:[/?]|||d)" />
+        <entry key="text" value="https://www.amazon.com/gp/product/B01C6DXMX0/ref=s9_simh_gw_g60_i2_r?ie=UTF8&amp;fpl=fresh&amp;pf_rd_m=ATVPDKIKX0DER&amp;pf_rd_s=&amp;pf_rd_r=JZHRGSKEYVP22W6C8VEN&amp;pf_rd_t=36701&amp;pf_rd_p=b13ec477-194d-4f63-971b-ca6229de96a2&amp;pf_rd_i=desktop&#10;" />
       </map>
     </option>
   </component>

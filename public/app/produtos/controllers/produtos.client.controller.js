@@ -60,19 +60,31 @@ angular.module('produtos').controller('ListProdutosController', ['$scope', '$sta
         };
         this.flotO = options;
 
+        $scope.xUpdateAll = function() {
+            $scope.produtos.forEach(function (prod) {
+                prod.$update(function () {
+                    ngToast.create('Produto atualizado com sucesso !!!');
+                }, function(errorResponse) {
+                    ngToast.danger(errorResponse.data.message);
+                    $scope.error = errorResponse.data.message;
+                });
+            });
+        };
+
         $scope.loadData = function() {
             var d = $scope.formaDados();
             $scope.flotD = [d];
         };
 
         $scope.formaDados = function(produto) {
-            var data = [];
-            for (var i = 1; i < produto.historico.length; i++) {
-                var venda = produto.historico[i].venda - produto.historico[i - 1].venda;
-                var porra = new Date(produto.historico[i].data);
-                data.push([porra.getTime(), venda]);
+            let info = [];
+            for (let i = 0; i < produto.historico.length; i++) {
+                // var reviews = produto.historico[i].reviews - produto.historico[i - 1].reviews;
+                let reviews = produto.historico[i].reviews_da_data;
+                let data = new Date(produto.historico[i].data);
+                info.push([data.getTime(), reviews]);
             }
-            return data;
+            return info;
         };
         
         $scope.create = function() {
@@ -117,7 +129,7 @@ angular.module('produtos').controller('ListProdutosController', ['$scope', '$sta
             }).$promise.then(function(data) {
                 let d = $scope.formaDados(data);
                 // $scope.flotD = [data1];
-                $scope.flotD = [[d]];
+                $scope.flotD = [d];
                 $scope.produto = data;
             });
         };

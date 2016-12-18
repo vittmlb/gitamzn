@@ -117,9 +117,10 @@ var ProdutoAmazonSchema = new Schema({
                 type: Date,
                 default: Date.now
             },
-            venda: Number,
-            venda_da_data: Number,
-            num_stars: Number
+            reviews: Number, // Número total acumulado de reviews
+            reviews_da_data: Number, // Total de reviews feitas entre a última e a atual medição
+            num_stars: Number, // Média de avaliaçao do produto na data da medição.
+            price: Number, // Preço do produto na data da medição.
         }
     ],
     LargeImage: {
@@ -137,7 +138,12 @@ ProdutoAmazonSchema.set('toJSON', {
 });
 
 ProdutoAmazonSchema.virtual('media.venda').get(function () {
-    let vendaTotal = this.historico[this.historico.length - 1].venda - this.historico[0].venda;
+    let vendaTotal = this.historico[this.historico.length - 1].reviews_total - this.historico[0].reviews_total;
+    return vendaTotal / dayDiff(this.historico[0].data, this.historico[this.historico.length - 1].data);
+});
+
+ProdutoAmazonSchema.virtual('virtual.media.reviews').get(function () {
+    let vendaTotal = this.historico[this.historico.length - 1].reviews - this.historico[0].reviews;
     return vendaTotal / dayDiff(this.historico[0].data, this.historico[this.historico.length - 1].data);
 });
 
@@ -168,7 +174,30 @@ ProdutoAmazonSchema.virtual('virtual.num_stars').get(function () {
 });
 
 ProdutoAmazonSchema.virtual('virtual.num_reviews').get(function () {
-    return this.historico[this.historico.length -1].venda;
+    return this.historico[this.historico.length -1].reviews;
+});
+
+ProdutoAmazonSchema.virtual('virtual.faturamento.mes.corrente').get(function () {
+    let faturamento = [];
+    let diario = {'total': 0};
+    let monthCount = 0;
+    let total = 0;
+    let currentMonth = this.historico[0].data.getMonth();
+    for (let i = 0; i < this.historico.length; i++) {
+        if(this.historico[i].data.getMonth() === currentMonth) {
+            diario.mes = currentMonth;
+            diario.total = diario.total + (this.historico[i].reviews_da_data * this.virtual.price);
+            if(i === this.historico.length - 1) {
+                faturamento.push(diario);
+            }
+        } else {
+            faturamento.push(diario);
+            currentMonth = this.historico[i].data.getMonth();
+            diario.mes = currentMonth;
+            diario.total = this.historico[i].reviews_da_data;
+        }
+    }
+    return faturamento[0];
 });
 
 function dayDiff(firstDate, secondDate) {

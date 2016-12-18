@@ -28,7 +28,8 @@
                     <div class="ibox-content">
                         <div class="row m-b-sm m-t-sm toolbar-list-ml">
                             <div class="col-xs-12 col-md-1 toolbar-input-button">
-                                <button type="button" ng-click="atualizarTodasVendas()" id="btn-update-all" class="btn btn-white btn-sm "><i class="fa fa-refresh"></i> Update</button>
+                                <!--<button type="button" ng-click="atualizarTodasVendas()" id="btn-update-all" class="btn btn-white btn-sm "><i class="fa fa-refresh"></i> Updates</button>-->
+                                <button type="button" ng-click="xUpdateAll()" id="btn-update-all" class="btn btn-white btn-sm "><i class="fa fa-refresh"></i> Updates</button>
                             </div>
                             <div class="col-xs-12 col-sm-3 toolbar-input-button">
                                 <!-- Single button -->
@@ -40,8 +41,8 @@
                                         Ordenar &nbsp<i class="fa fa-sort" aria-hidden="true"></i>
                                     </button>
                                     <ul class="dropdown-menu">
-                                        <li><a ng-click="sort('media.venda')">Média</a></li>
-                                        <li><a ng-click="sort('historico[historico.length-1].venda')">Vendas</a></li>
+                                        <li><a ng-click="sort('virtual.media.reviews')">Média</a></li>
+                                        <li><a ng-click="sort('virtual.num_reviews')">Vendas</a></li>
                                         <li><a ng-click="sort('price')">Preço</a></li>
                                         <li role="separator" class="divider"></li>
                                         <li><a href="#"></a></li>
@@ -76,21 +77,21 @@
                                             <div class="produto-list-ml-title">
                                                 <a href="#!/produtos/{{ item._id }}">{{ item.virtual.title | limitTo: 60}}</a>
                                                 <br/>
-                                                <small>Reviews: {{item.historico[item.historico.length-1].venda}}</small>&nbsp;&nbsp;
-                                                <small>Média: {{item.media.venda | number: 2}}</small>&nbsp;&nbsp;
+                                                <small>Reviews: {{item.virtual.num_reviews}}</small>&nbsp;&nbsp;
+                                                <small>Média: {{item.virtual.media.reviews | number: 2}}</small>&nbsp;&nbsp;
                                                 <small>Preço: {{item.virtual.price | currency: 'U$ '}}</small>
                                             </div>
                                         </div>
                                         <div class="visible-lg col-lg-1 text-right">
                                             <div style="margin-top: 10px;">
                                                 <span>Reviews</span>
-                                                <h2 class="font-bold">{{item.historico[item.historico.length-1].venda}}</h2>
+                                                <h2 class="font-bold">{{item.virtual.num_reviews}}</h2>
                                             </div>
                                         </div>
                                         <div class="visible-lg col-lg-2 text-right">
                                             <div style="margin-top: 10px;">
                                                 <span>Média</span>
-                                                <h2 class="font-bold">{{item.media.venda | number: 2}}</h2>
+                                                <h2 class="font-bold">{{item.virtual.media.reviews | number: 2}}</h2>
                                             </div>
                                         </div>
                                         <!--<div class="visible-lg col-lg-3">-->

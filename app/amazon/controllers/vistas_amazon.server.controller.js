@@ -8,7 +8,7 @@ exports.create = function(req, res) {
     vista.save(function (err) {
         if(err) {
             return res.status(400).send({
-                message: err
+                message: `Erro !! Cod: ${err.code} - ${err.message}`
             });
         } else {
             res.json(vista);
@@ -20,7 +20,7 @@ exports.list = function(req, res) {
     VistasAmazon.find().populate('produtos_vista').exec(function (err, vistas) {
         if(err) {
             return res.status(400).send({
-                message: err
+                message: `Erro !! Cod: ${err.code} - ${err.message}`
             });
         } else {
             res.json(vistas);
@@ -34,7 +34,7 @@ exports.read = function(req, res) {
 
 exports.findById = function(req, res, next, id) {
     VistasAmazon.findById(id).populate('produtos_vista').exec(function (err, vista) {
-        if(err) return next(err);
+        if(err) return next(`Erro !! Cod: ${err.code} - ${err.message}`);
         if(!vista) return next(new Error(`Não foi possível encontrar a Vista id: ${id}`));
         req.vista = vista;
         next();
@@ -49,7 +49,7 @@ exports.update = function(req, res) {
     vista.save(function (err) {
         if(err) {
             return res.status(400).send({
-                message: err
+                message: `Erro !! Cod: ${err.code} - ${err.message}`
             });
         } else {
             res.json(vista);
@@ -62,7 +62,7 @@ exports.delete = function(req, res) {
     vista.remove(function (err) {
         if(err) {
             return res.status(400).send({
-                message: err
+                message: `Erro !! Cod: ${err.code} - ${err.message}`
             });
         } else {
             res.json(vista);

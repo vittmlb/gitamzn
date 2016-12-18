@@ -16,6 +16,23 @@
           </option>
           <option name="userDatabase" value="impAmazon" />
         </ServerConfiguration>
+        <ServerConfiguration>
+          <option name="authenticationDatabase" value="dbconcorrentes" />
+          <option name="authenticationMechanism" value="SCRAM-SHA-1" />
+          <option name="connectOnIdeStartup" value="true" />
+          <option name="label" value="mLab - db Concorrentes" />
+          <option name="password" value="Utld2287" />
+          <option name="serverUrls">
+            <list>
+              <option value="ds053186.mlab.com:53186" />
+            </list>
+          </option>
+          <option name="sshTunnelingConfiguration">
+            <SshTunnelingConfiguration />
+          </option>
+          <option name="userDatabase" value="dbconcorrentes" />
+          <option name="username" value="vmlb" />
+        </ServerConfiguration>
       </list>
     </option>
     <option name="shellPath" value="C:\Program Files\MongoDB\Server\3.2\bin\mongo.exe" />

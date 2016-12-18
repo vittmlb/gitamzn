@@ -43,10 +43,10 @@
             </div> <!-- Coluna 1 - Img e dados -->
             <div class="visible-lg col-lg-3 div-margin-bottom">
                 <h1 class="m-b-xs">
-                    Reviews: {{ produto.virtual.num_reviews }}
+                    Reviews: {{ produto.virtual.num_reviews | number}}
                 </h1>
                 <small>
-                    {{ produto.virtual.num_stars }} out of 5 stars<br/>
+                    <div style="font-size: 1.6em;" class="font-bold text-navy">{{ produto.virtual.num_stars}} <i class="fa fa-star"></i></div>
                 </small>
                 <div class="m-b-sm">
                     <div sparkline spark-data="chart.sparkline1" spark-options="chart.sparkline1Options"></div>
@@ -72,8 +72,8 @@
 
                 <div class="row m-t-xs">
                     <div class="col-xs-6">
-                        <h5 class="m-b-xs">Income last month</h5>
-                        <h1 class="no-margins">160,000</h1>
+                        <h5 class="m-b-xs">Mês Corrente</h5>
+                        <h1 class="no-margins">{{ produto.virtual.faturamento.mes.corrente.total | currency: 'US ' }}</h1>
                         <div class="font-bold text-navy">98% <i class="fa fa-bolt"></i></div>
                     </div>
                     <div class="col-xs-6" id="sales-current-year">
@@ -207,21 +207,21 @@
                 <div class="row">
                     <div class="ibox collapsed">
                         <div class="ibox-title">
-                            <h5>Histórico de Vendas</h5>
+                            <h5>Histórico de Reviews</h5>
                             <div ibox-tools></div>
                         </div>
                         <div class="ibox-content">
                             <table class="table table-striped">
                                 <thead>
                                 <th>Data</th>
-                                <th class="text-center">Venda Total</th>
-                                <th class="text-center">Venda da Data</th>
+                                <th class="text-center">Reviews Total</th>
+                                <th class="text-center">Reviews da Data</th>
                                 </thead>
                                 <tbody>
                                 <tr data-ng-repeat="item in produto.historico">
                                     <td>{{ item.data | date: 'dd/MM/yyyy' }}</td>
-                                    <td class="text-center">{{ item.venda }}</td>
-                                    <td class="text-center">{{ item.venda_da_data }}</td>
+                                    <td class="text-center">{{ item.reviews }}</td>
+                                    <td class="text-center">{{ item.reviews_da_data }}</td>
                                 </tr>
                                 </tbody>
                             </table>
@@ -235,10 +235,6 @@
                             <div ibox-tools></div>
                         </div>
                         <div class="ibox-content">
-                            <h1 class="m-b-xs">
-                                Características
-                            </h1>
-                            <br/>
                             <small ng-repeat="feature in produto.ItemAttributes.Feature">
                                 # {{ feature }}<br/><br/>
                             </small>

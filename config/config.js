@@ -4,6 +4,6 @@
  */
 
 var nEnv = (process.env.NODE_env === 'development' ? process.env.NODE_env : 'production');
-nEnv = 'production';
-// nEnv = 'development';
+// nEnv = 'production';
+nEnv = 'development';
 module.exports = require(`./env/${nEnv}.js`);

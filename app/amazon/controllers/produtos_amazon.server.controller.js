@@ -35,22 +35,27 @@ exports.create = function(req, res) {
             let numReviews = extraiNumReviews(result.numReviews);
             let numStars = extraiNumStars(result.numStars);
             let historico = {};
-            if(produtoAmazon.historico.length == 0) {
-                historico.venda_da_data = 0;
+            if (produtoAmazon.historico.length == 0) {
+                historico.reviews_da_data = 0;
             } else {
-                historico.venda_da_data = numReviews - produtoAmazon.historico[produtoAmazon.historico.length - 1].venda;
+                historico.reviews_da_data = numReviews - produtoAmazon.historico[produtoAmazon.historico.length - 1].reviews;
             }
-            historico.venda = numReviews;
+            historico.reviews = numReviews;
             historico.num_stars = numStars;
+            historico.price = produtoAmazon.ItemAttributes.ListPrice.Amount;
             produtoAmazon.historico.push(historico);
             produtoAmazon.save(function (err) {
-                if(err) {
+                if (err) {
                     return res.status(400).send({
-                        message: err
+                        message: `Erro !! Cod: ${err.code} - ${err.message}`
                     });
                 } else {
                     res.json(produtoAmazon);
                 }
+            });
+        }).catch(function (err) {
+            return res.status(400).send({
+                message: err
             });
         });
     });
@@ -60,7 +65,7 @@ exports.list = function(req, res) {
     ProdutosAmazon.find().sort('-created').exec(function (err, produtosAmazon) {
         if(err) {
             return res.status(400).send({
-                message: err
+                message: `Erro !! Cod: ${err.code} - ${err.message}`
             });
         } else {
             res.json(produtosAmazon);
@@ -74,31 +79,44 @@ exports.read = function(req, res) {
 
 exports.findById = function(req, res, next, id) {
     ProdutosAmazon.findById(id).exec(function (err, produtoAmazon) {
-        if(err) return next(err);
+        if(err) return next(`Erro !! Cod: ${err.code} - ${err.message}`);
         if(!produtoAmazon) return next(new Error(`Failed to LOAD produtoAmazon id: ${id}`));
         req.produtoAmazon = produtoAmazon;
         next();
     });
 };
 
-// exports.update = function(req, res) {
-//     let produtoAmazon = req.produtoAmazon;
-//     scraperjs.StaticScraper.create(produtoAmazon.DetailPageURL).scrape(function ($) {
-//         return $('#acrCustomerReviewText').get();
-//     }).then(function (result) {
-//         let data  = result[0].children[0].data;
-//         let numReviews = extraiNumReviews(data);
-//
-//         res.json(produtoAmazon);
-//     });
-// };
+exports.xUpdateAll = function(req, res) {
+    let produto = req.produtoAmazon;
+    produto.historico = [{}];
+    for(let i = 0; i < produto.historicos.length; i++) {
+
+        var origem = produto.historicos[i];
+        var destino = produto.historico[i];
+
+        destino.data = origem.data;
+        destino.reviews_total = origem.venda;
+        destino.reviews_da_data = origem.venda_da_data;
+        destino.num_stars = origem.num_stars;
+
+    }
+    produto.save(function (err) {
+        if(err) {
+            return res.status(400).send({
+                message: `Erro !!! Cod: ${err.code} - ${err.message}`
+            });
+        } else {
+            res.json(produto);
+        }
+    });
+};
 
 exports.delete = function(req, res) {
     let produtoAmazon = req.produtoAmazon;
     produtoAmazon.remove(function (err) {
         if(err) {
             return res.status(400).send({
-                message: err
+                message: `Erro !! Cod: ${err.code} - ${err.message}`
             });
         } else {
             res.json(produtoAmazon);
@@ -117,18 +135,19 @@ exports.updateSoldQuantity = function(req, res) {
         let numReviews = extraiNumReviews(result.numReviews);
         let numStars = extraiNumStars(result.numStars);
         let historico = {};
-        if(produtoAmazon.historico.length == 0) {
-            historico.venda_da_data = 0;
+        if (produtoAmazon.historico.length == 0) {
+            historico.reviews_da_data = 0;
         } else {
-            historico.venda_da_data = numReviews - produtoAmazon.historico[produtoAmazon.historico.length - 1].venda;
+            historico.reviews_da_data = numReviews - produtoAmazon.historico[produtoAmazon.historico.length - 1].reviews;
         }
-        historico.venda = numReviews;
+        historico.reviews = numReviews;
         historico.num_stars = numStars;
+        historico.price = produtoAmazon.ItemAttributes.ListPrice.Amount;
         produtoAmazon.historico.push(historico);
         produtoAmazon.save(function (err) {
             if(err) {
                 return res.status(400).send({
-                    message: `${produtoAmazon.virtual.title} / ${err}`
+                    message: `Erro !! Cod: ${err.code} - ${err.message}`
                 });
             } else {
                 res.json(produtoAmazon);
@@ -151,7 +170,7 @@ exports.listar = function(req, res) {
     });
 };
 
-function extraiIdProduto(str) {
+function extraiIdProdutoOld(str) {
     let re = /dp\/\w{10}/;
     let m;
 
@@ -165,6 +184,16 @@ function extraiIdProduto(str) {
 
     return m;
 
+}
+
+function extraiIdProduto(url) {
+    let regex = new RegExp("([a-zA-Z0-9]{10})(?:[/?]|$)");
+    let m = url.match(regex);
+    if(m) {
+        return m[1];
+    } else {
+        return null;
+    }
 }
 
 function extraiNumReviews(str) {
