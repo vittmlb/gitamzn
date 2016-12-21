@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="642d4d7d-6ee3-4422-a31e-3a7677c6193b" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/amazon/controllers/produtos_amazon.server.controller.js" afterPath="$PROJECT_DIR$/app/amazon/controllers/produtos_amazon.server.controller.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -69,13 +69,14 @@
       <file leaf-file-name="produtos_amazon.server.controller.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/amazon/controllers/produtos_amazon.server.controller.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="342">
-              <caret line="57" column="68" lean-forward="false" selection-start-line="57" selection-start-column="68" selection-end-line="57" selection-end-column="68" />
+            <state relative-caret-position="251">
+              <caret line="133" column="25" lean-forward="true" selection-start-line="133" selection-start-column="25" selection-end-line="133" selection-end-column="25" />
               <folding>
+                <element signature="e#307#434#0" expanded="false" />
+                <element signature="e#645#2444#0" expanded="false" />
                 <element signature="e#1064#1266#0" expanded="false" />
                 <element signature="e#2481#2783#0" expanded="false" />
                 <element signature="e#2820#2856#0" expanded="false" />
-                <element signature="e#2907#3213#0" expanded="false" />
                 <element signature="e#3256#3910#0" expanded="false" />
                 <element signature="e#3949#4254#0" expanded="false" />
                 <element signature="e#5575#6008#0" expanded="false" />
@@ -93,16 +94,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="189">
               <caret line="7" column="42" lean-forward="true" selection-start-line="7" selection-start-column="42" selection-end-line="7" selection-end-column="42" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="produtos_amazon.server.routes.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/amazon/routes/produtos_amazon.server.routes.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="216">
-              <caret line="8" column="34" lean-forward="false" selection-start-line="8" selection-start-column="34" selection-end-line="8" selection-end-column="34" />
               <folding />
             </state>
           </provider>
@@ -512,7 +503,7 @@
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="options.splitter.details.proportions" value="0.2" />
     <property name="options.searchVisible" value="true" />
-    <property name="settings.editor.selected.configurable" value="preferences.mongoOptions" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
     <property name="JavaScriptPreferStrict" value="false" />
     <property name="JavaScriptWeakerCompletionTypeGuess" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
@@ -675,7 +666,7 @@
       <workItem from="1481663796353" duration="39000" />
       <workItem from="1481663873939" duration="3876000" />
       <workItem from="1481675932075" duration="9554000" />
-      <workItem from="1482085179158" duration="5652000" />
+      <workItem from="1482085179158" duration="19133000" />
     </task>
     <servers>
       <Wrike shared="false" url="">
@@ -708,7 +699,7 @@
         </w_my_contact>
         <w_credentials>
           <WrikeOAuth2Data>
-            <option name="accessToken" value="b4LrvqfybmmV83rxgVnsVBAgJ8BBu7SqqOjOeT1FlYmtZZCMBu1GVRONGeEJX9PB-N-N" />
+            <option name="accessToken" value="aBHklTSDPVgARcXTFbeKdgzLhxsmB0FHmjXay2lNR5trmP899AdINE5Po4qhtt7J-N-N" />
             <option name="host" value="www.wrike.com" />
             <option name="refreshToken" value="9Vv89XqYMTATLaV7W0AMVIEiWtivaQoiE41BMYFfd8fVhebI1AxPhX1a9B4tcxde-A-N" />
           </WrikeOAuth2Data>
@@ -776,10 +767,10 @@
     </servers>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="115264000" />
+    <option name="totallyTimeSpent" value="128745000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="0" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -794,7 +785,7 @@
       <window_info id="Wrike" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.23946667" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.37012264" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3979933" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32998884" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -835,7 +826,45 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="322" />
+      <breakpoints>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/app/amazon/controllers/produtos_amazon.server.controller.js</url>
+          <line>134</line>
+          <properties />
+          <option name="timeStamp" value="325" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/app/amazon/controllers/produtos_amazon.server.controller.js</url>
+          <line>135</line>
+          <properties />
+          <option name="timeStamp" value="326" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/app/amazon/controllers/produtos_amazon.server.controller.js</url>
+          <line>146</line>
+          <properties />
+          <option name="timeStamp" value="327" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/app/amazon/controllers/produtos_amazon.server.controller.js</url>
+          <line>147</line>
+          <properties />
+          <option name="timeStamp" value="328" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/app/amazon/controllers/produtos_amazon.server.controller.js</url>
+          <line>148</line>
+          <properties />
+          <option name="timeStamp" value="329" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/app/amazon/controllers/produtos_amazon.server.controller.js</url>
+          <line>128</line>
+          <properties />
+          <option name="timeStamp" value="330" />
+        </line-breakpoint>
+      </breakpoints>
+      <option name="time" value="331" />
     </breakpoint-manager>
     <watches-manager>
       <configuration name="NodeJSConfigurationType">
@@ -1123,14 +1152,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/amazon/routes/produtos_amazon.server.routes.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="8" column="34" lean-forward="false" selection-start-line="8" selection-start-column="34" selection-end-line="8" selection-end-column="34" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/app/produtos/views/list-produtos.client.view.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="27">
@@ -1170,14 +1191,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="189">
           <caret line="7" column="2" lean-forward="true" selection-start-line="7" selection-start-column="2" selection-end-line="7" selection-end-column="2" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config/env/development.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="189">
-          <caret line="7" column="42" lean-forward="true" selection-start-line="7" selection-start-column="42" selection-end-line="7" selection-end-column="42" />
           <folding />
         </state>
       </provider>
@@ -1223,15 +1236,32 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/amazon/routes/produtos_amazon.server.routes.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="216">
+          <caret line="8" column="34" lean-forward="false" selection-start-line="8" selection-start-column="34" selection-end-line="8" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/env/development.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="189">
+          <caret line="7" column="42" lean-forward="true" selection-start-line="7" selection-start-column="42" selection-end-line="7" selection-end-column="42" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/amazon/controllers/produtos_amazon.server.controller.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="342">
-          <caret line="57" column="68" lean-forward="false" selection-start-line="57" selection-start-column="68" selection-end-line="57" selection-end-column="68" />
+        <state relative-caret-position="251">
+          <caret line="133" column="25" lean-forward="true" selection-start-line="133" selection-start-column="25" selection-end-line="133" selection-end-column="25" />
           <folding>
+            <element signature="e#307#434#0" expanded="false" />
+            <element signature="e#645#2444#0" expanded="false" />
             <element signature="e#1064#1266#0" expanded="false" />
             <element signature="e#2481#2783#0" expanded="false" />
             <element signature="e#2820#2856#0" expanded="false" />
-            <element signature="e#2907#3213#0" expanded="false" />
             <element signature="e#3256#3910#0" expanded="false" />
             <element signature="e#3949#4254#0" expanded="false" />
             <element signature="e#5575#6008#0" expanded="false" />
@@ -1248,9 +1278,9 @@
     <option name="map">
       <map>
         <entry key="flags" value="0" />
-        <entry key="mode" value="0" />
-        <entry key="regex" value="/([a-zA-Z0-9]{10})(?:[/?]|||d)" />
-        <entry key="text" value="https://www.amazon.com/gp/product/B01C6DXMX0/ref=s9_simh_gw_g60_i2_r?ie=UTF8&amp;fpl=fresh&amp;pf_rd_m=ATVPDKIKX0DER&amp;pf_rd_s=&amp;pf_rd_r=JZHRGSKEYVP22W6C8VEN&amp;pf_rd_t=36701&amp;pf_rd_p=b13ec477-194d-4f63-971b-ca6229de96a2&amp;pf_rd_i=desktop&#10;" />
+        <entry key="mode" value="2" />
+        <entry key="regex" value="[\w][^a]" />
+        <entry key="text" value="The rougher the seas, the smthr we sail." />
       </map>
     </option>
   </component>
