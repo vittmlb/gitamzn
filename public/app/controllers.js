@@ -1423,113 +1423,18 @@ function widgetFlotChart() {
  * modalDemoCtrl - Controller used to run modal view
  * used in Basic form view
  */
-function modalDemoCtrl($scope, $modal) {
-
-    $scope.open = function () {
-
-        var modalInstance = $modal.open({
-            templateUrl: 'views/modal_example.html',
-            controller: ModalInstanceCtrl
-        });
-    };
-
-    $scope.open1 = function () {
-        var modalInstance = $modal.open({
-            templateUrl: 'views/modal_example1.html',
-            controller: ModalInstanceCtrl
-        });
-    };
-
-    $scope.open2 = function () {
-        var modalInstance = $modal.open({
-            templateUrl: 'views/modal_example2.html',
-            controller: ModalInstanceCtrl,
-            windowClass: "animated fadeIn"
-        });
-    };
-
-    $scope.open3 = function (size) {
-        var modalInstance = $modal.open({
-            templateUrl: 'views/modal_example3.html',
-            size: size,
-            controller: ModalInstanceCtrl
-        });
-    };
-
-    $scope.open4 = function () {
-        var modalInstance = $modal.open({
-            templateUrl: 'views/modal_example2.html',
-            controller: ModalInstanceCtrl,
-            windowClass: "animated flipInY"
-        });
-    };
-};
-
-function ModalInstanceCtrl ($scope, $modalInstance) {
+function ModalInstanceCtrl ($scope, $uibModalInstance) {
 
     $scope.ok = function () {
-        $modalInstance.close();
+        $uibModalInstance.close();
     };
 
     $scope.cancel = function () {
-        $modalInstance.dismiss('cancel');
+        $uibModalInstance.dismiss('cancel');
     };
 
 
-    $scope.states = [
-        'Alabama',
-        'Alaska',
-        'Arizona',
-        'Arkansas',
-        'California',
-        'Colorado',
-        'Connecticut',
-        'Delaware',
-        'Florida',
-        'Georgia',
-        'Hawaii',
-        'Idaho',
-        'Illinois',
-        'Indiana',
-        'Iowa',
-        'Kansas',
-        'Kentucky',
-        'Louisiana',
-        'Maine',
-        'Maryland',
-        'Massachusetts',
-        'Michigan',
-        'Minnesota',
-        'Mississippi',
-        'Missouri',
-        'Montana',
-        'Nebraska',
-        'Nevada',
-        'New Hampshire',
-        'New Jersey',
-        'New Mexico',
-        'New York',
-        'North Carolina',
-        'North Dakota',
-        'Ohio',
-        'Oklahoma',
-        'Oregon',
-        'Pennsylvania',
-        'Rhode Island',
-        'South Carolina',
-        'South Dakota',
-        'Tennessee',
-        'Texas',
-        'Utah',
-        'Vermont',
-        'Virginia',
-        'Washington',
-        'West Virginia',
-        'Wisconsin',
-        'Wyoming'
-    ];
-
-};
+}
 
 /**
  * ionSlider - Controller for data for Ion Slider plugin
@@ -3306,7 +3211,7 @@ angular
     .controller('rickshawChartCtrl', rickshawChartCtrl)
     .controller('sparklineChartCtrl', sparklineChartCtrl)
     .controller('widgetFlotChart', widgetFlotChart)
-    .controller('modalDemoCtrl', modalDemoCtrl)
+    .controller('ModalInstanceCtrl', ModalInstanceCtrl)
     .controller('ionSlider', ionSlider)
     .controller('wizardCtrl', wizardCtrl)
     .controller('CalendarCtrl', CalendarCtrl)

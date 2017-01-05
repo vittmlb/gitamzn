@@ -1,8 +1,8 @@
 /**
  * Created by Vittorio on 17/05/2016.
  */
-angular.module('produtos').controller('ListProdutosController', ['$scope', '$stateParams', '$location', 'Produtos', 'ngToast',
-    function($scope, $stateParams, $location, Produtos, ngToast) {
+angular.module('produtos').controller('ListProdutosController', ['$scope', '$stateParams', '$location', 'Produtos', 'ngToast', '$uibModal',
+    function($scope, $stateParams, $location, Produtos, ngToast, $uibModal) {
 
         $scope.sortkey = 'media.venda';
         $scope.reverse = true;
@@ -12,6 +12,19 @@ angular.module('produtos').controller('ListProdutosController', ['$scope', '$sta
         $scope.sort = function(keyname) {
             $scope.sortkey = keyname;
         };
+
+
+
+        $scope.openModalUpdate = function() {
+            let modalInstance = $uibModal.open({
+                templateUrl: 'app/produtos/views/partials/modal-produto-update.client.partial.html',
+                controller: ModalInstanceCtrl,
+                scope: $scope,
+                windowClass: 'animated flipInY'
+            });
+        };
+
+        $scope.update_produto = {};
 
         let data1 = [
             [0,4],[1,8],[2,5],[3,10],[4,4],[5,16],[6,5],[7,11],[8,6],[9,11],[10,20],[11,10],[12,13],[13,4],[14,7],[15,8],[16,12]

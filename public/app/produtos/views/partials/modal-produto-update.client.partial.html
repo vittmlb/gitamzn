@@ -1,0 +1,30 @@
+<div class="modal-body">
+    <div class="row">
+        <div class="col-sm-6 b-r"><h3 class="m-t-none m-b">Update Reviews & Stars</h3>
+
+            <p>Preencha as informações abaixo:</p>
+
+            <form data-ng-submit="update()">
+                <div class="form-group">
+                    <label>Reviews</label>
+                    <input type="number" placeholder="Enter Reviews" class="form-control" id="reviews" name="reviews" data-ng-model="produto.reviews">
+                </div>
+                <div class="form-group">
+                    <label>Stars</label>
+                    <input placeholder="Enter Stars" class="form-control" id="num_stars" name="num_stars" data-ng-model="produto.num_stars">
+                </div>
+                <div>
+                    <input type="submit" class="btn btn-sm btn-primary pull-right m-t-n-xs" value="Update">
+                </div>
+            </form>
+        </div>
+        <div class="col-sm-6"><h4>Not a member?</h4>
+
+            <p>You can create an account:</p>
+
+            <p class="text-center">
+                <a href=""><i class="fa fa-sign-in big-icon"></i></a>
+            </p>
+        </div>
+    </div>
+</div>

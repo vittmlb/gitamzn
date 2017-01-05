@@ -86,6 +86,31 @@ exports.findById = function(req, res, next, id) {
     });
 };
 
+exports.update = function(req, res) {
+    let produtoAmazon = req.produtoAmazon;
+    let numReviews = req.body.reviews;
+    let numStars = Number(req.body.num_stars);
+    let historico = {};
+    if (produtoAmazon.historico.length == 0) {
+        historico.reviews_da_data = 0;
+    } else {
+        historico.reviews_da_data = numReviews - produtoAmazon.historico[produtoAmazon.historico.length - 1].reviews;
+    }
+    historico.reviews = numReviews;
+    historico.num_stars = numStars;
+    historico.price = produtoAmazon.ItemAttributes.ListPrice.Amount;
+    produtoAmazon.historico.push(historico);
+    produtoAmazon.save(function (err) {
+        if(err) {
+            return res.status(400).send({
+                message: `Erro !! Cod: ${err.code} - ${err.message}`
+            });
+        } else {
+            res.json(produtoAmazon);
+        }
+    });
+};
+
 exports.xUpdateAll = function(req, res) {
     let produto = req.produtoAmazon;
     produto.historico = [{}];
@@ -125,6 +150,38 @@ exports.delete = function(req, res) {
 };
 
 exports.updateSoldQuantity = function(req, res) {
+    let produtoAmazon = req.produtoAmazon;
+    scraperjs.StaticScraper.create(produtoAmazon.DetailPageURL).scrape(function ($) {
+        return {
+            numReviews: $('span #acrCustomerReviewText').get()[0].children[0].data,
+            numStars: $('#acrPopover').get()[0].attribs.title,
+        };
+    }).then(function (result) {
+        let numReviews = extraiNumReviews(result.numReviews);
+        let numStars = extraiNumStars(result.numStars);
+        let historico = {};
+        if (produtoAmazon.historico.length == 0) {
+            historico.reviews_da_data = 0;
+        } else {
+            historico.reviews_da_data = numReviews - produtoAmazon.historico[produtoAmazon.historico.length - 1].reviews;
+        }
+        historico.reviews = numReviews;
+        historico.num_stars = numStars;
+        historico.price = produtoAmazon.ItemAttributes.ListPrice.Amount;
+        produtoAmazon.historico.push(historico);
+        produtoAmazon.save(function (err) {
+            if(err) {
+                return res.status(400).send({
+                    message: `Erro !! Cod: ${err.code} - ${err.message}`
+                });
+            } else {
+                res.json(produtoAmazon);
+            }
+        });
+    });
+};
+
+exports.updateSoldQuantityOld = function(req, res) {
     let produtoAmazon = req.produtoAmazon;
     scraperjs.StaticScraper.create(produtoAmazon.DetailPageURL).scrape(function ($) {
         return {

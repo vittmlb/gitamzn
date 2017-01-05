@@ -11,7 +11,7 @@ module.exports = function(app) {
 
     app.route('/api/produtos_amazon/:produtoId')
         .get(produtos_amazon.read)
-        .put(produtos_amazon.updateSoldQuantity)
+        .put(produtos_amazon.update)
         // .put(produtos_amazon.xUpdateAll)
         .delete(produtos_amazon.delete);
 
