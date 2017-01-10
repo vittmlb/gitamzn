@@ -180,13 +180,26 @@ ProdutoAmazonSchema.virtual('virtual.num_reviews').get(function () {
 ProdutoAmazonSchema.virtual('virtual.faturamento.mes.corrente').get(function () {
     let faturamento = [];
     let diario = {'total': 0};
+    let currentMonth = (new Date()).getMonth();
+    let total = 0;
+    for (let i = 0; i < this.historico.length; i++) {
+        if(this.historico[i].data.getMonth() === currentMonth) {
+            total = total + (this.historico[i].reviews_da_data * (this.ItemAttributes.ListPrice.Amount / 100));
+        }
+    }
+    return total;
+});
+
+ProdutoAmazonSchema.virtual('virtual.faturamento.mes.corrente.OLD').get(function () {
+    let faturamento = [];
+    let diario = {'total': 0};
     let monthCount = 0;
     let total = 0;
     let currentMonth = this.historico[0].data.getMonth();
     for (let i = 0; i < this.historico.length; i++) {
         if(this.historico[i].data.getMonth() === currentMonth) {
             diario.mes = currentMonth;
-            diario.total = diario.total + (this.historico[i].reviews_da_data * this.virtual.price);
+            diario.total = diario.total + (this.historico[i].reviews_da_data * this.ItemAttributes.ListPrice.Amount);
             if(i === this.historico.length - 1) {
                 faturamento.push(diario);
             }
