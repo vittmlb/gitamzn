@@ -177,6 +177,10 @@ ProdutoAmazonSchema.virtual('virtual.num_reviews').get(function () {
     return this.historico[this.historico.length -1].reviews;
 });
 
+ProdutoAmazonSchema.virtual('virtual.data_ultimo_update').get(function () {
+    return this.historico[this.historico.length -1].data;
+});
+
 ProdutoAmazonSchema.virtual('virtual.faturamento.mes.corrente').get(function () {
     let faturamento = [];
     let diario = {'total': 0};
