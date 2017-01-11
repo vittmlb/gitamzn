@@ -12,7 +12,7 @@
         </ol>
     </div>
 </div>
-<section data-ng-controller="ListProdutosController" data-ng-init="find()">
+<section data-ng-controller="ListProdutosController" data-ng-init="findUpdateList()">
     <div class="row">
         <div class="col-lg-12">
             <div class="wrapper wrapper-content animated fadeInUp">
@@ -67,7 +67,7 @@
 
                         <div class="produto-display-list">
                             <ul style="list-style-type: none;">
-                                <li class="produto-display" dir-paginate="item in produtos | filter: query | orderBy: sortkey: reverse | itemsPerPage: numItemsPerPage">
+                                <li class="produto-display" dir-paginate="item in produtos | filter: query | orderBy: sortkey: reverse | itemsPerPage: numItemsPerPage" ng-show="item.show">
                                     <div class="row">
                                         <div class="col-xs-2 col-sm-1">
                                             <div class="">
@@ -76,7 +76,7 @@
                                         </div>
                                         <div class="col-xs-10 col-sm-6 col-md-6 col-lg-4">
                                             <div class="produto-list-ml-title">
-                                                <a href="#!/produtos/{{ item._id }}">{{ item.virtual.title | limitTo: 60}}</a>
+                                                <a href="{{ item.DetailPageURL }}">{{ item.virtual.title | limitTo: 60}}</a>
                                                 <br/>
                                                 <small>Reviews: {{item.virtual.num_reviews}}</small>&nbsp;&nbsp;
                                                 <small>Média: {{item.virtual.media.reviews | number: 2}}</small>&nbsp;&nbsp;
@@ -84,16 +84,18 @@
                                                 <small>Update: {{ item.virtual.data_ultimo_update | date: 'dd/MM/yyyy'  }}</small>
                                             </div>
                                         </div>
-                                        <div class="visible-lg col-lg-1 text-right">
-                                            <div style="margin-top: 10px;">
-                                                <span>Reviews</span>
-                                                <h2 class="font-bold">{{item.virtual.num_reviews}}</h2>
-                                            </div>
-                                        </div>
                                         <div class="visible-lg col-lg-2 text-right">
                                             <div style="margin-top: 10px;">
-                                                <span>Média</span>
-                                                <h2 class="font-bold">{{item.virtual.media.reviews | number: 2}}</h2>
+                                                <span>Reviews</span>
+                                                <input type="number" placeholder="Reviews" class="form-control" id="reviews" name="reviews" data-ng-model="item.reviews">
+                                                <!--<h2 class="font-bold">{{item.virtual.num_reviews}}</h2>-->
+                                            </div>
+                                        </div>
+                                        <div class="visible-lg col-lg-1 text-right">
+                                            <div style="margin-top: 10px;">
+                                                <span>Stars</span>
+                                                <!--<h2 class="font-bold">{{item.virtual.media.reviews | number: 2}}</h2>-->
+                                                <input placeholder="Enter Stars" class="form-control" id="num_stars" name="num_stars" data-ng-model="item.num_stars">
                                             </div>
                                         </div>
                                         <!--<div class="visible-lg col-lg-3">-->
@@ -107,7 +109,7 @@
                                         <div class="hidden-xs col-sm-5 col-md-4 col-lg-3">
                                             <div class="produto-list-ml-action">
                                                 <a ng-click="delete(item)" class="btn btn-white btn-sm pull-right"><i class="fa fa-times"></i></a>
-                                                <a href="#!/produtos/{{ item._id }}" class="btn btn-white btn-sm pull-right"><i class="fa fa-eye"></i></a>
+                                                <a ng-click="updateFromList(item)" class="btn btn-white btn-sm pull-right"><i class="fa fa-refresh"></i></a>
                                             </div>
                                         </div>
                                     </div>

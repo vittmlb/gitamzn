@@ -14,6 +14,11 @@ angular.module('produtos').config(['$stateProvider',
                 templateUrl: 'app/produtos/views/list-produtos.client.view.html',
                 controller: 'ListProdutosController'
             })
+            .state('produtos_list_update', {
+                url: '/produtos_update',
+                templateUrl: 'app/produtos/views/list-produtos-update.client.view.html',
+                controller: 'ListProdutosController'
+            })
             .state('produtos_view', {
                 url: '/produtos/:produtoId',
                 templateUrl: 'app/produtos/views/view-produto.client.view.html',

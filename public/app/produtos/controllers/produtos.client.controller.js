@@ -4,7 +4,8 @@
 angular.module('produtos').controller('ListProdutosController', ['$scope', '$stateParams', '$location', 'Produtos', 'ngToast', '$uibModal',
     function($scope, $stateParams, $location, Produtos, ngToast, $uibModal) {
 
-        $scope.sortkey = 'media.venda';
+        $scope.sortkey = 'virtual.media.reviews';
+        $scope.sortkeyUpdateList = 'virtual.data_ultimo_update'; // Chave usada para ordenar a lista da página de updates em forma de lista, considerando já a data do último update
         $scope.reverse = true;
         $scope.reverseSort = function() {
             $scope.reverse = !$scope.reverse;
@@ -13,6 +14,10 @@ angular.module('produtos').controller('ListProdutosController', ['$scope', '$sta
             $scope.sortkey = keyname;
         };
 
+
+        $scope.sortUpdateList = function(keyname) {
+            $scope.sortkeyUpdateList = keyname;
+        };
 
 
         $scope.openModalUpdate = function() {
@@ -129,9 +134,30 @@ angular.module('produtos').controller('ListProdutosController', ['$scope', '$sta
                 }
             }
         };
-        $scope.find = function() {
+        $scope.findOld = function() {
             $scope.produtos = Produtos.query();
             $scope.filteredProdutos = $scope.produtos;
+        };
+        $scope.find = function() {
+            Produtos.query().$promise.then(function (data) {
+                $scope.produtos = data;
+                $scope.filteredProdutos = $scope.produtos;
+                for (let i = 0; i < $scope.produtos.length; i++) {
+                    $scope.produtos[i].num_stars = $scope.produtos[i].virtual.num_stars;
+                }
+            });
+        };
+        $scope.findUpdateList = function() {
+            Produtos.query().$promise.then(function (data) {
+                $scope.produtos = data;
+                $scope.filteredProdutos = $scope.produtos;
+                $scope.sortkey = 'virtual.data_ultimo_update'; // Chave usada para ordenar a lista da página de updates em forma de lista, considerando já a data do último update
+                $scope.reverse = false;
+                for (let i = 0; i < $scope.produtos.length; i++) {
+                    $scope.produtos[i].num_stars = $scope.produtos[i].virtual.num_stars;
+                    $scope.produtos[i].show = checkUpdateToday($scope.produtos[i]);
+                }
+            });
         };
         $scope.findOne = function() {
             // $scope.produto = Produtos.get({
@@ -144,6 +170,7 @@ angular.module('produtos').controller('ListProdutosController', ['$scope', '$sta
                 // $scope.flotD = [data1];
                 $scope.flotD = [d];
                 $scope.produto = data;
+                $scope.produto.num_stars = $scope.produto.virtual.num_stars
             });
         };
         $scope.update = function() {
@@ -151,6 +178,13 @@ angular.module('produtos').controller('ListProdutosController', ['$scope', '$sta
                 $location.path('/produtos/' + response._id);
             });
         };
+
+        $scope.updateFromList = function(produto) {
+            produto.$update(function (response) {
+                $scope.messageUpdate = 'Produto Atualizado com sucesso !!!'
+            });
+        };
+
         $scope.atualizarVenda = function(item) {
             item.$update(function () {
                 $location.path('/produtos');
@@ -170,6 +204,16 @@ angular.module('produtos').controller('ListProdutosController', ['$scope', '$sta
             });
         };
         $scope.numItemsPerPage = 30;
+
+        function checkUpdateToday (item) {
+            let today = new Date();
+            let ultimo_update = new Date(item.virtual.data_ultimo_update);
+            if(ultimo_update.setHours(0, 0, 0, 0) == today.setHours(0, 0, 0, 0)) {
+                return false;
+            }
+            return true;
+        }
+
     }
 ]);
 
