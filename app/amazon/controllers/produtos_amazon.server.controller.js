@@ -17,7 +17,7 @@ let opHelper = new OperationHelper({
 
 let optionsA = {'SearchIndex': 'HomeGarden', 'Keywords': 'spin mop', 'ResponseGroup': 'ItemAttributes,Offers, Cart, Images, Reviews, SalesRank, SearchBins, TopSellers'};
 
-exports.create = function(req, res) {
+exports.createOld = function(req, res) {
     let id = extraiIdProduto(req.body.produtoUrl);
     opHelper.execute('ItemLookup', {
         'IdType': 'ASIN',
@@ -57,6 +57,40 @@ exports.create = function(req, res) {
             return res.status(400).send({
                 message: `Erro !! Cod: ${err.code} - ${err.message}`
             });
+        });
+    });
+};
+
+exports.create = function(req, res) {
+    let id = extraiIdProduto(req.body.produtoUrl);
+    let numReviews = Number(req.body.produtoNumReviews); // todo: Criar uma condicional para impedir que o produto seja criado com valores diferentes de números.
+    let numStars = Number(req.body.produtoNumStars);
+    opHelper.execute('ItemLookup', {
+        'IdType': 'ASIN',
+        'ItemId': id,
+        'ResponseGroup': 'ItemAttributes,Images'
+    }).then((result) => {
+        let item = result.result.ItemLookupResponse.Items.Item;
+        let produtoAmazon = new ProdutosAmazon(item);
+        let historico = {};
+        if (produtoAmazon.historico.length == 0) {
+            historico.reviews_da_data = 0;
+        } else {
+            historico.reviews_da_data = numReviews - produtoAmazon.historico[produtoAmazon.historico.length - 1].reviews;
+        }
+        historico.reviews = numReviews;
+        historico.reviews_da_data = 0;
+        historico.num_stars = numStars;
+        historico.price = produtoAmazon.ItemAttributes.ListPrice.Amount;
+        produtoAmazon.historico.push(historico);
+        produtoAmazon.save(function (err) {
+            if (err) {
+                return res.status(400).send({
+                    message: `Erro !! Cod: ${err.code} - ${err.message}`
+                });
+            } else {
+                res.json(produtoAmazon);
+            }
         });
     });
 };

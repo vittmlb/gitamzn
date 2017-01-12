@@ -106,8 +106,10 @@ angular.module('produtos').controller('ListProdutosController', ['$scope', '$sta
         };
         
         $scope.create = function() {
-            var produto = new Produtos({
-                produtoUrl: this.produtoUrl
+            let produto = new Produtos({
+                produtoUrl: this.produtoUrl,
+                produtoNumReviews: this.produtoNumReviews,
+                produtoNumStars: this.produtoNumStars
             });
             produto.$save(function (response) {
                 $location.path('/produtos/' + response._id);
