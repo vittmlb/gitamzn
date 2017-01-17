@@ -28,8 +28,7 @@
                     <div class="ibox-content">
                         <div class="row m-b-sm m-t-sm toolbar-list-ml">
                             <div class="col-xs-12 col-md-1 toolbar-input-button">
-                                <!--<button type="button" ng-click="atualizarTodasVendas()" id="btn-update-all" class="btn btn-white btn-sm "><i class="fa fa-refresh"></i> Updates</button>-->
-                                <button type="button" ng-click="xUpdateAll()" id="btn-update-all" class="btn btn-white btn-sm "><i class="fa fa-refresh"></i> Updates</button>
+                                <button type="button" ng-click="" id="btn-update-all" class="btn btn-white btn-sm disabled"><i class="fa fa-refresh"></i> Updates</button>
                             </div>
                             <div class="col-xs-12 col-sm-3 toolbar-input-button">
                                 <!-- Single button -->
@@ -131,6 +130,55 @@
                 </div>
             </div>
         </div>
+    </div>
+    <div>
+        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" id="myModalLabel">Produtos</h4>
+                    </div>
+                    <div class="modal-body">
+                        <div class="form-group">
+                            <input type="text" class="form-control search-result" placeholder="Busca" data-ng-model="query">
+                        </div>
+                        <div class="produto-modal-list">
+                            <!--<table id="modal-example-1" class="table" data-paging="true" data-filtering="true" data-sorting="true">-->
+                            <table class="table table-striped">
+                                <thead>
+                                <tr>
+                                    <th></th>
+                                    <th></th>
+                                    <th></th>
+                                    <th></th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr ng-click="adicionaProdutoEstudo(item)" data-ng-repeat="item in produtos | filter: query">
+                                    <td class="produto-modal-people">
+                                        <a href="#"><img class="img-circle" ng-src="{{ item.img_url }}" alt="Imagem {{ item.nome }}"></a>
+                                    </td>
+                                    <td class="produto-modal-title" data-ng-model="item.nome" data-filter-value="query">
+                                        {{item.nome}}<br/>
+                                        <small>{{ item.modelo }}</small> - <small>{{ item.fornecedor.nome_fornecedor }}</small>
+                                        - <small>{{ item.fornecedor.cidade_fornecedor }}</small>
+                                    </td>
+                                    <td data-ng-bind="item.custo_usd | currency: 'U$ '"></td>
+                                    <td>
+                                        <a ng-click="adicionaProdutoEstudo(item)"><i class="fa fa-plus clickable" aria-hidden="true"></i></a>
+                                    </td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div> <!-- Modal -->
     </div>
 </section>
 <script>

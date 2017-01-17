@@ -11,7 +11,7 @@ angular.module('vistas').config(['$stateProvider',
             })
             .state('vistas_list', {
                 url: '/vistas_amazon',
-                templateUrl: 'app/vistas/views/list-vistas.client.view.html',
+                templateUrl: 'app/vistas/views/new-list-vistas.client.view.html',
                 controller: 'VistasController'
             })
             .state('vistas_view', {
