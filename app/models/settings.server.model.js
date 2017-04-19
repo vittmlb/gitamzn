@@ -7,6 +7,9 @@ let Schema = mongoose.Schema;
 let SettingsSchema = new Schema({
     amazon: {
         opHelper: {
+            nome: {
+                type: String,
+            },
             awsId: {
                 type: String,
                 trim: true,

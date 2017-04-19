@@ -6,13 +6,33 @@ let util = require('util');
 let OperationHelper = require('apac').OperationHelper;
 let scrapy = require('node-scrapy');
 let scraperjs = require('scraperjs');
+let settings = require('../../controllers/settings.server.controller');
 
 let ProdutosAmazon = require('mongoose').model('ProdutoAmazon');
 
+let amazonSettings = {
+    awsId: '',
+    awsSecret: '',
+    assocId: ''
+};
+
+let loadSettings = function () {
+    let o = settings.loadAmazonId();
+    o.then(function (data) {
+        amazonSettings.awsId = data[0]._doc.amazon.opHelper.awsId;
+        amazonSettings.awsSecret = data[0]._doc.amazon.opHelper.awsSecret;
+        amazonSettings.assocId = data[0]._doc.amazon.opHelper.assocId;
+    });
+    o.catch(function (err) {
+        return err;
+    });
+}();
+
+
 let opHelper = new OperationHelper({
-    awsId: 'AKIAICS5AM5V3NYB6VDA',
-    awsSecret: '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',
-    assocId: 'myinexcoapp-20'
+    awsId: amazonSettings.awsId,
+    awsSecret: amazonSettings.awsSecret,
+    assocId: amazonSettings.assocId
 });
 
 let optionsA = {'SearchIndex': 'HomeGarden', 'Keywords': 'spin mop', 'ResponseGroup': 'ItemAttributes,Offers, Cart, Images, Reviews, SalesRank, SearchBins, TopSellers'};
@@ -65,11 +85,13 @@ exports.create = function(req, res) {
     let id = extraiIdProduto(req.body.produtoUrl);
     let numReviews = Number(req.body.produtoNumReviews); // todo: Criar uma condicional para impedir que o produto seja criado com valores diferentes de números.
     let numStars = Number(req.body.produtoNumStars);
-    opHelper.execute('ItemLookup', {
+    let p = opHelper.execute('ItemLookup', {
         'IdType': 'ASIN',
         'ItemId': id,
         'ResponseGroup': 'ItemAttributes,Images'
-    }).then((result) => {
+    });
+
+    p.then(function (result) {
         let item = result.result.ItemLookupResponse.Items.Item;
         let produtoAmazon = new ProdutosAmazon(item);
         let historico = {};
@@ -93,6 +115,42 @@ exports.create = function(req, res) {
             }
         });
     });
+
+    p.catch(function (err) {
+        console.log(err);
+        return res.status(400).send({
+            message: err
+        });
+    });
+
+    // opHelper.execute('ItemLookup', {
+    //     'IdType': 'ASIN',
+    //     'ItemId': id,
+    //     'ResponseGroup': 'ItemAttributes,Images'
+    // }).then((result) => {
+    //     let item = result.result.ItemLookupResponse.Items.Item;
+    //     let produtoAmazon = new ProdutosAmazon(item);
+    //     let historico = {};
+    //     if (produtoAmazon.historico.length == 0) {
+    //         historico.reviews_da_data = 0;
+    //     } else {
+    //         historico.reviews_da_data = numReviews - produtoAmazon.historico[produtoAmazon.historico.length - 1].reviews;
+    //     }
+    //     historico.reviews = numReviews;
+    //     historico.reviews_da_data = 0;
+    //     historico.num_stars = numStars;
+    //     historico.price = produtoAmazon.ItemAttributes.ListPrice.Amount;
+    //     produtoAmazon.historico.push(historico);
+    //     produtoAmazon.save(function (err) {
+    //         if (err) {
+    //             return res.status(400).send({
+    //                 message: `Erro !! Cod: ${err.code} - ${err.message}`
+    //             });
+    //         } else {
+    //             res.json(produtoAmazon);
+    //         }
+    //     });
+    // });
 };
 
 exports.list = function(req, res) {

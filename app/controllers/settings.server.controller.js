@@ -42,6 +42,20 @@ exports.findById = function(req, res, next, id) {
     });
 };
 
+exports.loadAmazonId = function() {
+    let p = Settings.find().exec();
+
+    p.then(function (data) {
+        return data;
+    });
+    p.catch(function (err) {
+        return err;
+    });
+
+    return p;
+
+};
+
 exports.update = function(req, res) {
     let setting = req.setting;
     setting.amazon = req.body.amazon;
