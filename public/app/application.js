@@ -8,6 +8,7 @@ var mainAppModule = angular.module('impml', [
     'ngRoute',
     'produtos',
     'vendedoresml',
+    'settings',
     'vistas',
     'angularUtils.directives.dirPagination',
     'ngToast',

@@ -30,7 +30,9 @@ module.exports = function() {
     require('../app/amazon/models/vistas_amazon.server.model');
     require('../app/models/vendedores_ml.server.model');
     // require('../app/models/vistas.server.model');
-    
+
+    require('../app/models/settings.server.model.js');
+
     return db;
     
 };

@@ -2,7 +2,6 @@
     <div class="sidebar-collapse">
         <ul side-navigation class="nav metismenu" id="side-menu">
             <li class="nav-header">
-
                 <div class="dropdown profile-element" dropdown>
                     <img alt="image" class="img-circle" src="img/profile_small.jpg"/>
                     <a class="dropdown-toggle" dropdown-toggle href>
@@ -47,7 +46,11 @@
                 </ul>
             </li>
             <li>
-                <a ui-sref="estudos_main"><i class="fa fa-pie-chart"></i> <span class="nav-label">Estudos</span></a>
+                <a ui-sref="estudos_main"><i class="fa fa-pie-chart"></i> <span class="nav-label">Settings</span></a>
+                <ul class="nav nav-second-level collapse">
+                    <li ui-sref-active="active"><a ui-sref="setting_list">Listar Settings</a></li>
+                    <li ui-sref-active="active"><a ui-sref="setting_create">Criar Settings</a></li>
+                </ul>
             </li>
         </ul>
 

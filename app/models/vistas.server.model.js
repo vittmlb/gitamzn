@@ -1,10 +1,10 @@
 /**
  * Created by Vittorio on 28/09/2016.
  */
-var mongoose = require('mongoose');
-var Schema = mongoose.Schema;
+let mongoose = require('mongoose');
+let Schema = mongoose.Schema;
 
-var VistasSchema = new Schema({
+let VistasSchema = new Schema({
     criada_em: {
         type: Date,
         default: Date.now

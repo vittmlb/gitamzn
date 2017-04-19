@@ -51,6 +51,7 @@ module.exports = function() {
     require('../app/routes/vendedores_ml.server.routes')(app);
     require('../app/amazon/routes/produtos_amazon.server.routes.js')(app);
     require('../app/amazon/routes/vistas_amazon.server.routes')(app);
+    require('../app/routes/settings.server.routes.js')(app);
 
     return app;
 
